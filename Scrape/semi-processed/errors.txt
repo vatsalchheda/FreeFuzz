@@ -1,0 +1,16 @@
+paddle.compat
+paddle.device.cuda
+A lot of errors:
+paddle.distributed.fleet
+paddle.distributed.utils
+paddle.distributed.communication - not on the site still got scraped
+paddle.fluid
+paddle.incubate
+paddle.inference
+paddle.nn: some extra, some missing
+paddle.optimizer.lr
+paddle.sparse.nn / .n
+paddle.static.nn / .n
+paddle.tensor - not on site
+paddle.utils
+paddle.vision
