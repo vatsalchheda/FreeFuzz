@@ -1,3 +1,4 @@
+
 import paddle
 
 from .decorate_func import decorate_function
@@ -18,7 +19,7 @@ def hijack(obj, func_name_str):
         return inspect.isclass(x)
     def is_callable(x):
         return callable(x)
-    
+
     if is_class(orig_func):
         wrapped_func = decorate_class(orig_func, func_name_str)
     elif is_callable(orig_func):
