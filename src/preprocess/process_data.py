@@ -128,11 +128,13 @@ def write_API_signature(library_name='torch'):
         arg_names = []
         for temp_name in API_args[api_name].split(","):
             temp_name = temp_name.strip()
+            print(temp_name)
             if len(temp_name) == 0 or temp_name == "*":
                 continue
             if "=" in temp_name:
                 temp_name = temp_name[:temp_name.find("=")]
-            arg_names.append(temp_name)
+            arg_names.append(temp_name.strip())
+        print(arg_names)
         DB[signature_collection].insert_one({
             "api": api_name,
             "args": arg_names
@@ -154,6 +156,8 @@ def write_similarity(library_name='torch'):
 
         print(api_name)
         arg_names = DB["signature"].find_one({"api": api_name})["args"]
+        # arg_names = DB["signature"].find_one({"api": api_name})
+        # print(arg_names)
         for arg_name in arg_names:
             APIs, probs = similarAPI(api_name, arg_name)
             sim_dict = {}
@@ -185,5 +189,8 @@ if __name__ == "__main__":
     DB = pymongo.MongoClient(host, port)[mongo_cfg[f"{target}_database"]]
 
     loadAPIs(join("..", "data", f"{target}_APIdef.txt"))
+
+    print(API_args)
+    print(API_def)
     write_API_signature(target)
     write_similarity(target)

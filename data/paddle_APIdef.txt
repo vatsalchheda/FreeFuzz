@@ -1,0 +1,3 @@
+paddle.paddle.abs(x,name = None)
+paddle.paddle.to_tensor(data , dtype = None , place = None , stop_gradient = True)
+paddle.paddle. get_default_dtype()
