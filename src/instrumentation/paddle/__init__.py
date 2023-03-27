@@ -1,7 +1,7 @@
 import paddle
 
-import decorate_function
-import decorate_class
+from .decorate_func import decorate_function
+from .decorate_cls import decorate_class
 import inspect
 
 def hijack(obj, func_name_str):
@@ -31,10 +31,10 @@ def hijack(obj, func_name_str):
 with open(__file__.replace("__init__.py", "paddle.txt"), "r") as f1:
     lines = f1.readlines()
     # skipped = ["enable_grad", "get_default_dtype", "load", "tensor", "no_grad", "jit"]
-    skipped = []
+    skipped = "paddle.fluid"
     for l in lines:
         l = l.strip()
-        if l not in skipped:
+        if skipped not in l:
             hijack(paddle, l)
 
 
