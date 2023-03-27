@@ -166,7 +166,7 @@ def write_similarity(library_name='torch'):
 
 if __name__ == "__main__":
     target = sys.argv[1]
-    if target not in ["torch", "tf"]:
+    if target not in ["torch", "tf", "paddle"]:
         print("Only support 'torch' or 'tf'!")
         assert(0)
 
