@@ -1,2 +1,0 @@
-System Message: WARNING/2 (/usr/local/lib/python3.8/site-packages/paddle/fluid/contrib/layers/nn.py:docstring of paddle.fluid.contrib.layers.nn.partial_sum, line 28)
-Explicit markup ends without a blank line; unexpected unindent.
