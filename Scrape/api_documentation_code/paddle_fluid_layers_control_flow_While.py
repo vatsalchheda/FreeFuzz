@@ -1,0 +1,2 @@
+Note
+A new OP api_fluid_layers_while_loop is highly recommended instead of While if the shape of parameter cond is [1]. OP api_fluid_layers_while_loop is easier to use and is called with less code but does the same thing as While .
