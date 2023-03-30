@@ -31,7 +31,7 @@ def hijack(obj, func_name_str):
 with open(__file__.replace("__init__.py", "paddle.txt"), "r") as f1:
     lines = f1.readlines()
     # skipped = ["enable_grad", "get_default_dtype", "load", "tensor", "no_grad", "jit"]
-    skipped = "paddle.fluid"
+    skipped = "fluid"
     for l in lines:
         l = l.strip()
         if skipped not in l:

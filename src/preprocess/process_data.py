@@ -27,20 +27,21 @@ def loadAPIs(api_file='../data/torch_APIdef.txt'):
     with open(api_file, "r") as fin:
         lines = fin.readlines()
         for line in lines:
-            line = line.strip()
-            API_name = line.split("(")[0]
-            API_args_match = re.search("\((.*)\)", line)
-            try:
-                API_args_text = API_args_match.group(1)
-            except:
-                # with open("log/tf/api_def_error.txt", 'a') as f:
-                #     f.write(line + "\n")
-                # continue
-                raise ValueError(line)
-            # print(API_args_text)
-            if API_name not in API_def.keys():
-                API_def[API_name] = line
-                API_args[API_name] = API_args_text
+            if not line.startswith("paddle.fluid"):
+                line = line.strip()
+                API_name = line.split("(")[0]
+                API_args_match = re.search("\((.*)\)", line)
+                try:
+                    API_args_text = API_args_match.group(1)
+                except:
+                    # with open("log/tf/api_def_error.txt", 'a') as f:
+                    #     f.write(line + "\n")
+                    # continue
+                    raise ValueError(line)
+                # print(API_args_text)
+                if API_name not in API_def.keys():
+                    API_def[API_name] = line
+                    API_args[API_name] = API_args_text
 
 
 def query_argname(arg_name):
