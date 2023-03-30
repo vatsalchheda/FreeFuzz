@@ -1728,4 +1728,3 @@ paddle.vision.transforms.to_grayscale(img,num_output_channels=1)
 paddle.vision.transforms.to_tensor(pic,data_format='CHW')
 paddle.vision.transforms.ToTensor(data_format='CHW',keys=None)
 paddle.vision.transforms.Transpose(order=(2,0,1),keys=None)
-paddle.vision.transforms.vflip(img)paddle.Tensor.add_(x,y,napaddle.Tensor.add_(x,y,na
