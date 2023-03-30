@@ -1,0 +1,2 @@
+System Message: ERROR/3 (/usr/local/lib/python3.8/site-packages/paddle/fluid/contrib/mixed_precision/bf16/amp_lists.py:docstring of paddle.fluid.contrib.mixed_precision.bf16.amp_lists.AutoMixedPrecisionListsBF16, line 18)
+Unexpected indentation.
