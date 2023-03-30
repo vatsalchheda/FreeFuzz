@@ -1,0 +1,2 @@
+System Message: ERROR/3 (/usr/local/lib/python3.8/site-packages/paddle/fluid/contrib/decoder/beam_search_decoder.py:docstring of paddle.fluid.contrib.decoder.beam_search_decoder.BeamSearchDecoder, line 37)
+Unexpected indentation.
