@@ -19,7 +19,7 @@ paddle_CUDAPinnedPlace.py Traceback (most recent call last):
 RuntimeError: (PermissionDenied) Cannot use CUDAPinnedPlace in CPU only version, Please recompile or reinstall Paddle with CUDA support. (at ..\paddle\fluid\pybind\place.cc:531)
 
 
-paddle_CUDAPlace.py E0330 14:02:32.331347  2232 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
+paddle_CUDAPlace.py E0330 18:06:36.202889 28436 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
 If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
 If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
 
@@ -88,19 +88,19 @@ paddle_device_cuda_get_device_properties.py Traceback (most recent call last):
     raise ValueError(
 ValueError: The API paddle.device.cuda.get_device_properties is not supported in CPU-only PaddlePaddle. Please reinstall PaddlePaddle with GPU support to call this API.
 
-paddle_device_cuda_max_memory_allocated.py E0330 14:02:47.726287 26100 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
+paddle_device_cuda_max_memory_allocated.py E0330 18:07:00.239320 29084 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
 If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
 If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
 
-paddle_device_cuda_max_memory_reserved.py E0330 14:02:49.744022 19824 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
+paddle_device_cuda_max_memory_reserved.py E0330 18:07:02.514513  8688 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
 If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
 If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
 
-paddle_device_cuda_memory_allocated.py E0330 14:02:51.870698  6652 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
+paddle_device_cuda_memory_allocated.py E0330 18:07:04.574940 19916 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
 If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
 If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
 
-paddle_device_cuda_memory_reserved.py E0330 14:02:53.928942 17132 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
+paddle_device_cuda_memory_reserved.py E0330 18:07:06.642659 26164 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
 If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
 If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
 
@@ -118,15 +118,15 @@ paddle_device_cuda_synchronize.py Traceback (most recent call last):
 RuntimeError: (Unavailable) Paddle is not compiled with CUDA. Cannot visit device synchronize. (at ..\paddle\fluid\pybind\cuda_streams_py.cc:93)
 
 
-paddle_device_IPUPlace.py E0330 14:03:00.334098 21860 place.cc:643] Cannot use IPU because you didn't install IPU version PaddlePaddle.
+paddle_device_IPUPlace.py E0330 18:07:27.316639 32032 place.cc:643] Cannot use IPU because you didn't install IPU version PaddlePaddle.
 If you want to use IPU, please try to install IPU version PaddlePaddle by: pip install paddlepaddle*
 If you only have CPU, please change IPUPlace to be CPUPlace().
 
-paddle_device_MLUPlace.py E0330 14:03:02.375216 17364 place.cc:710] Cannot use MLU because you have installed CPU/GPU/... version PaddlePaddle.
+paddle_device_MLUPlace.py E0330 18:07:45.834669 21276 place.cc:710] Cannot use MLU because you have installed CPU/GPU/... version PaddlePaddle.
 If you want to use MLU, please try to install MLU version PaddlePaddle by: pip install paddlepaddle-mlu
 If you only have CPU, please change MLUPlace(0) to be CPUPlace().
 
-paddle_device_XPUPlace.py E0330 14:03:04.474903  7808 place.cc:425] Cannot use XPU because you have installed CPU/GPU version PaddlePaddle.
+paddle_device_XPUPlace.py E0330 18:07:50.172375 16356 place.cc:425] Cannot use XPU because you have installed CPU/GPU version PaddlePaddle.
 If you want to use XPU, please try to install XPU version PaddlePaddle by: pip install paddlepaddle-xpu
 If you only have CPU, please change XPUPlace(0) to be CPUPlace().
 
@@ -519,7 +519,7 @@ Traceback (most recent call last):
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 
-paddle_distributed_sharding_group_sharded_parallel.py [2023-03-30 14:04:16,617] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+paddle_distributed_sharding_group_sharded_parallel.py [2023-03-30 18:10:21,057] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
 Traceback (most recent call last):
   File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_sharding_group_sharded_parallel.py", line 8, in <module>
     group = paddle.distributed.new_group([0, 1])
@@ -529,7 +529,7 @@ Traceback (most recent call last):
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 
-paddle_distributed_sharding_save_group_sharded_model.py [2023-03-30 14:04:18,699] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+paddle_distributed_sharding_save_group_sharded_model.py [2023-03-30 18:10:23,345] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
 Traceback (most recent call last):
   File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_sharding_save_group_sharded_model.py", line 8, in <module>
     group = paddle.distributed.new_group([0, 1])
@@ -571,6 +571,127 @@ Traceback (most recent call last):
   File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py", line 86, in _get_global_group
     raise RuntimeError("The global group is not initialized.")
 RuntimeError: The global group is not initialized.
+
+paddle_incubate_nn_FusedFeedForward.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedFeedForward.py", line 7, in <module>
+    out = fused_feedforward_layer(x)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py", line 1012, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py", line 652, in forward
+    out = incubate_f.fused_feedforward(
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py", line 138, in fused_feedforward
+    out, _, _, _, _, _, _, _, _, _, _ = _legacy_C_ops.fused_feedforward(
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_feedforward'
+
+paddle_incubate_nn_FusedLinear.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedLinear.py", line 7, in <module>
+    y = linear(x)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py", line 1012, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_linear.py", line 94, in forward
+    return F.fused_linear(input, self.weight, self.bias,
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_matmul_bias.py", line 109, in fused_linear
+    return fused_matmul_bias(x, weight, bias, False, transpose_weight, name)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_matmul_bias.py", line 60, in fused_matmul_bias
+    return _legacy_C_ops.fused_gemm_epilogue(x, y, bias, 'trans_x',
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_gemm_epilogue'
+
+paddle_incubate_nn_FusedMultiHeadAttention.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedMultiHeadAttention.py", line 8, in <module>
+    output = multi_head_attn(query, None, None, attn_mask=attn_mask)  # [2, 4, 128]
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py", line 1012, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py", line 421, in forward
+    out = incubate_f.fused_multi_head_attention(
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py", line 656, in fused_multi_head_attention
+    ) = _legacy_C_ops.fused_attention(
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_attention'
+
+paddle_incubate_nn_FusedMultiTransformer.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedMultiTransformer.py", line 10, in <module>
+    enc_output = encoder_layers(enc_input, attn_mask)  # [2, 4, 128]
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py", line 1012, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py", line 1393, in forward
+    out = incubate_f.fused_multi_transformer(
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py", line 999, in fused_multi_transformer
+    cache_kv_out, final_out = _legacy_C_ops.fused_multi_transformer(
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_multi_transformer'
+
+paddle_incubate_nn_FusedTransformerEncoderLayer.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedTransformerEncoderLayer.py", line 10, in <module>
+    enc_output = encoder_layer(enc_input, attn_mask)  # [2, 4, 128]
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py", line 1012, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py", line 875, in forward
+    attn_out = self.fused_attn(src, attn_mask=src_mask)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py", line 1012, in __call__
+    return self.forward(*inputs, **kwargs)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py", line 421, in forward
+    out = incubate_f.fused_multi_head_attention(
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py", line 656, in fused_multi_head_attention
+    ) = _legacy_C_ops.fused_attention(
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_attention'
+
+paddle_incubate_softmax_mask_fuse.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_softmax_mask_fuse.py", line 8, in <module>
+    rst = incubate.softmax_mask_fuse(x, mask)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\operators\softmax_mask_fuse.py", line 62, in softmax_mask_fuse
+    out = _legacy_C_ops.fused_softmax_mask(x, mask)
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_softmax_mask'
+
+paddle_incubate_softmax_mask_fuse_upper_triangle.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_softmax_mask_fuse_upper_triangle.py", line 7, in <module>
+    rst = incubate.softmax_mask_fuse_upper_triangle(x)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\operators\softmax_mask_fuse_upper_triangle.py", line 62, in softmax_mask_fuse_upper_triangle
+    out = _legacy_C_ops.fused_softmax_mask_upper_triangle(x)
+NotImplementedError: (Unimplemented) Softmax mask fuse op only supports GPU now.
+  [Hint: Expected platform::is_gpu_place(ctx.GetPlace()) == true, but received platform::is_gpu_place(ctx.GetPlace()):0 != true:1.] (at ..\paddle/fluid/operators/fused_softmax_mask_upper_triangle_op.h:27)
+  [operator < fused_softmax_mask_upper_triangle > error]
+
+paddle_incubate_xpu_resnet_block_ResNetBasicBlock.py Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_xpu_resnet_block_ResNetBasicBlock.py", line 25, in <module>
+    out = resnet_basic_block.forward(x)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\xpu\resnet_block.py", line 682, in forward
+    out = resnet_basic_block(
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\xpu\resnet_block.py", line 142, in resnet_basic_block
+    ) = getattr(_C_ops, "resnet_basic_block")(
+AttributeError: module 'paddle.fluid.libpaddle.eager.ops' has no attribute 'resnet_basic_block'
+
+paddle_io_DataLoader.py   File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_io_DataLoader.py", line 2
+    For reading iterable dataset with multiprocess Dataloader, please see paddle.io.IterableDataset
+        ^
+SyntaxError: invalid syntax
+
+paddle_nn_CosineSimilarity.py   File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_CosineSimilarity.py", line 1
+    Case 0:
+         ^
+SyntaxError: invalid syntax
+
+paddle_nn_functional_class_center_sample.py [2023-03-30 18:18:58,362] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_class_center_sample.py", line 15, in <module>
+    dist.all_gather(label_list, label)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py", line 946, in all_gather
+    group = _get_default_group() if group is None else group
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py", line 125, in _get_default_group
+    assert is_initialized(), (
+AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
+
+paddle_nn_functional_cosine_similarity.py   File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_cosine_similarity.py", line 1
+    Case 0:
+         ^
+SyntaxError: invalid syntax
+
+paddle_nn_functional_margin_cross_entropy.py [2023-03-30 18:19:45,613] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+Traceback (most recent call last):
+  File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_margin_cross_entropy.py", line 19, in <module>
+    dist.all_gather(label_list, label)
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py", line 946, in all_gather
+    group = _get_default_group() if group is None else group
+  File "C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py", line 125, in _get_default_group
+    assert is_initialized(), (
+AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 
 paddle_NPUPlace.py   File "C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_NPUPlace.py", line 1
     System Message: ERROR/3 (docstring of paddle.fluid.libpaddle.NPUPlace, line 6)
