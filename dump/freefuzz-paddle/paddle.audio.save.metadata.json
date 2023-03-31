@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"908c94a77ec14da0b2df1f07075f3326","collectionName":"paddle.audio.save","type":"collection"}

@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"3f2c334904044d56b5189e6279d2b1f7","collectionName":"paddle.incubate.autograd.grad","type":"collection"}

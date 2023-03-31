@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"68243c5534194dce84f7c22b4d5f69cd","collectionName":"paddle.nn.MarginRankingLoss","type":"collection"}

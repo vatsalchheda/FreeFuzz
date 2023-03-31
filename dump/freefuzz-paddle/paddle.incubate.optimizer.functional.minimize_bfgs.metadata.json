@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f27be54acd914451a1d97621cc4578d1","collectionName":"paddle.incubate.optimizer.functional.minimize_bfgs","type":"collection"}

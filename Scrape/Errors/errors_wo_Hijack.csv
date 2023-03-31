@@ -1,712 +1,556 @@
 API,Error
-paddle_amp_decorate.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\amp\auto_cast.py:303: UserWarning: amp_guard can only be enabled on CUDAPlace, XPUPlace, MLUPlace, NPUPlace, and CustomPlace, current place is Place(cpu), so it makes no effect.
+paddle_DataParallel.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
-Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_amp_decorate.py"", line 13, in <module>
-    output = model(data)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\nn\layer\conv.py"", line 712, in forward
-    out = F.conv._conv_nd(
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\nn\functional\conv.py"", line 140, in _conv_nd
-    pre_bias = _C_ops.conv2d(
-RuntimeError: (NotFound) The kernel with key (CPU, NCHW, float16) of kernel `conv2d` is not registered.
-  [Hint: Expected kernel_iter == iter->second.end() && kernel_key.backend() == Backend::CPU != true, but received kernel_iter == iter->second.end() && kernel_key.backend() == Backend::CPU:1 == true:1.] (at ..\paddle\phi\core\kernel_factory.cc:147)
-
-"
-paddle_CUDAPinnedPlace.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_CUDAPinnedPlace.py"", line 2, in <module>
-    place = paddle.CUDAPinnedPlace()
-RuntimeError: (PermissionDenied) Cannot use CUDAPinnedPlace in CPU only version, Please recompile or reinstall Paddle with CUDA support. (at ..\paddle\fluid\pybind\place.cc:531)
-
-"
-paddle_CUDAPlace.py,"E0330 18:06:36.202889 28436 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
-If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
-If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
-"
-paddle_DataParallel.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
-  warnings.warn(
-C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\parallel.py:655: UserWarning: The program will return to single-card operation. Please check 1, whether you use spawn or fleetrun to start the program. 2, Whether it is a multi-card program. 3, Is the current environment multi-card.
+W0330 22:13:08.743191 11612 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:13:08.750190 11612 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
+C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\dygraph\parallel.py:655: UserWarning: The program will return to single-card operation. Please check 1, whether you use spawn or fleetrun to start the program. 2, Whether it is a multi-card program. 3, Is the current environment multi-card.
   warnings.warn(""The program will return to single-card operation. ""
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_DataParallel.py"", line 49, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_DataParallel.py"", line 49, in <module>
     fused_allreduce_gradients(list(model.parameters()), None)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\hybrid_parallel_util.py"", line 206, in fused_allreduce_gradients
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\hybrid_parallel_util.py"", line 206, in fused_allreduce_gradients
     fused_allreduce_gradients_with_group(parameter_list, data_parallel_group)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\hybrid_parallel_util.py"", line 200, in fused_allreduce_gradients_with_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\hybrid_parallel_util.py"", line 200, in fused_allreduce_gradients_with_group
     apply_func(parameter_list, group, bucket_size, scale)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\hybrid_parallel_util.py"", line 105, in _apply_collective_grads_eager
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\hybrid_parallel_util.py"", line 105, in _apply_collective_grads_eager
     paddle.distributed.all_reduce(coalesced_grad, group=comm_group)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
     return stream.all_reduce(tensor,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
     return _all_reduce_in_dygraph(tensor, op, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_device_cuda_current_stream.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_current_stream.py"", line 4, in <module>
-    s1 = paddle.device.cuda.current_stream()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 75, in current_stream
-    return core._get_current_stream(device_id)
-RuntimeError: (Unavailable) Paddle is not compiled with CUDA. Cannot visit device synchronize. (at ..\paddle\fluid\pybind\cuda_streams_py.cc:59)
-
-"
-paddle_device_cuda_empty_cache.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_empty_cache.py"", line 4, in <module>
-    paddle.set_device(""gpu"")
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\__init__.py"", line 316, in set_device
-    place = _convert_to_place(device)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\__init__.py"", line 202, in _convert_to_place
-    raise ValueError(""The device should not be 'gpu', ""
-ValueError: The device should not be 'gpu', since PaddlePaddle is not compiled with CUDA
-"
-paddle_device_cuda_get_device_capability.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_get_device_capability.py"", line 5, in <module>
-    paddle.device.cuda.get_device_capability()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 517, in get_device_capability
-    prop = get_device_properties(device)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 431, in get_device_properties
-    raise ValueError(
-ValueError: The API paddle.device.cuda.get_device_properties is not supported in CPU-only PaddlePaddle. Please reinstall PaddlePaddle with GPU support to call this API.
-"
-paddle_device_cuda_get_device_name.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_get_device_name.py"", line 5, in <module>
-    paddle.device.cuda.get_device_name()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 489, in get_device_name
-    return get_device_properties(device).name
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 431, in get_device_properties
-    raise ValueError(
-ValueError: The API paddle.device.cuda.get_device_properties is not supported in CPU-only PaddlePaddle. Please reinstall PaddlePaddle with GPU support to call this API.
-"
-paddle_device_cuda_get_device_properties.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_get_device_properties.py"", line 4, in <module>
-    paddle.device.cuda.get_device_properties()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 431, in get_device_properties
-    raise ValueError(
-ValueError: The API paddle.device.cuda.get_device_properties is not supported in CPU-only PaddlePaddle. Please reinstall PaddlePaddle with GPU support to call this API.
-"
-paddle_device_cuda_max_memory_allocated.py,"E0330 18:07:00.239320 29084 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
-If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
-If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
-"
-paddle_device_cuda_max_memory_reserved.py,"E0330 18:07:02.514513  8688 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
-If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
-If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
-"
-paddle_device_cuda_memory_allocated.py,"E0330 18:07:04.574940 19916 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
-If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
-If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
-"
-paddle_device_cuda_memory_reserved.py,"E0330 18:07:06.642659 26164 place.cc:359] Cannot use GPU because you have installed CPU version PaddlePaddle.
-If you want to use GPU, please try to install GPU version PaddlePaddle by: pip install paddlepaddle-gpu
-If you only have CPU, please change CUDAPlace(0) to be CPUPlace().
-"
-paddle_device_cuda_stream_guard.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_stream_guard.py"", line 4, in <module>
-    s = paddle.device.cuda.Stream()
-RuntimeError: (Unavailable) Class CUDAStream can only be initialized on the GPU platform. (at ..\paddle\fluid\pybind\cuda_streams_py.cc:298)
-
-"
-paddle_device_cuda_synchronize.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_device_cuda_synchronize.py"", line 4, in <module>
-    paddle.device.cuda.synchronize()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\device\cuda\__init__.py"", line 108, in synchronize
-    return core._device_synchronize(device_id)
-RuntimeError: (Unavailable) Paddle is not compiled with CUDA. Cannot visit device synchronize. (at ..\paddle\fluid\pybind\cuda_streams_py.cc:93)
-
-"
-paddle_device_IPUPlace.py,"E0330 18:07:27.316639 32032 place.cc:643] Cannot use IPU because you didn't install IPU version PaddlePaddle.
+paddle_device_IPUPlace.py,"E0330 22:14:41.422037  8112 place.cc:643] Cannot use IPU because you didn't install IPU version PaddlePaddle.
 If you want to use IPU, please try to install IPU version PaddlePaddle by: pip install paddlepaddle*
 If you only have CPU, please change IPUPlace to be CPUPlace().
 "
-paddle_device_MLUPlace.py,"E0330 18:07:45.834669 21276 place.cc:710] Cannot use MLU because you have installed CPU/GPU/... version PaddlePaddle.
+paddle_device_MLUPlace.py,"E0330 22:15:14.660989 16756 place.cc:710] Cannot use MLU because you have installed CPU/GPU/... version PaddlePaddle.
 If you want to use MLU, please try to install MLU version PaddlePaddle by: pip install paddlepaddle-mlu
 If you only have CPU, please change MLUPlace(0) to be CPUPlace().
 "
-paddle_device_XPUPlace.py,"E0330 18:07:50.172375 16356 place.cc:425] Cannot use XPU because you have installed CPU/GPU version PaddlePaddle.
+paddle_device_XPUPlace.py,"E0330 22:15:22.860976 12440 place.cc:425] Cannot use XPU because you have installed CPU/GPU version PaddlePaddle.
 If you want to use XPU, please try to install XPU version PaddlePaddle by: pip install paddlepaddle-xpu
 If you only have CPU, please change XPUPlace(0) to be CPUPlace().
 "
-paddle_distributed_alltoall.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_alltoall.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_alltoall.py"", line 13, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_alltoall.py"", line 13, in <module>
     dist.alltoall([data1, data2], out_tensor_list)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1276, in alltoall
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1276, in alltoall
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_alltoall_single.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_alltoall_single.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
+W0330 22:16:13.630894  6852 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:16:13.637894  6852 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_alltoall_single.py"", line 14, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_alltoall_single.py"", line 14, in <module>
     dist.alltoall_single(data, output)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1419, in alltoall_single
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1419, in alltoall_single
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_all_gather.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_all_gather.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_all_gather.py"", line 11, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_all_gather.py"", line 11, in <module>
     dist.all_gather(tensor_list, data)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_all_gather_object.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_all_gather_object.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
+W0330 22:16:26.493871  7888 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:16:26.498869  7888 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_all_gather_object.py"", line 11, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_all_gather_object.py"", line 11, in <module>
     dist.all_gather_object(object_list, obj)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1093, in all_gather_object
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1093, in all_gather_object
     all_gather(list_len_of_tensor, len_of_tensor, group)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_all_reduce.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_all_reduce.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_all_reduce.py"", line 10, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_all_reduce.py"", line 10, in <module>
     dist.all_reduce(data)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
     return stream.all_reduce(tensor,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
     return _all_reduce_in_dygraph(tensor, op, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_distributed_barrier.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_barrier.py"", line 4, in <module>
-    paddle.set_device('gpu:%d'%paddle.distributed.ParallelEnv().dev_id)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\parallel.py"", line 208, in device_id
-    return self._device_id
-AttributeError: 'ParallelEnv' object has no attribute '_device_id'
-"
-paddle_distributed_broadcast.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_barrier.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_broadcast.py"", line 10, in <module>
-    dist.broadcast(data, src=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 685, in broadcast
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_barrier.py"", line 6, in <module>
+    paddle.distributed.barrier()
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 279, in barrier
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_communication_stream_alltoall.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_broadcast.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_alltoall.py"", line 13, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_broadcast.py"", line 10, in <module>
+    dist.broadcast(data, src=1)
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 685, in broadcast
+    group = _get_default_group() if group is None else group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+    assert is_initialized(), (
+AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
+"
+paddle_distributed_communication_stream_alltoall.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+  warnings.warn(
+Traceback (most recent call last):
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_alltoall.py"", line 13, in <module>
     task = dist.stream.alltoall(out_tensor_list, [data1, data2], sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\alltoall.py"", line 148, in alltoall
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\alltoall.py"", line 148, in alltoall
     return _alltoall_in_dygraph(out_tensor_or_tensor_list,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\alltoall.py"", line 54, in _alltoall_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\alltoall.py"", line 54, in _alltoall_in_dygraph
     group = collective._get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_communication_stream_alltoall_single.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_alltoall_single.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
+W0330 22:16:50.735836 22664 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:16:50.740834 22664 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_alltoall_single.py"", line 14, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_alltoall_single.py"", line 14, in <module>
     task = dist.stream.alltoall_single(output, data, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\alltoall_single.py"", line 122, in alltoall_single
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\alltoall_single.py"", line 122, in alltoall_single
     return _alltoall_single_in_dygraph(out_tensor, in_tensor,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\alltoall_single.py"", line 22, in _alltoall_single_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\alltoall_single.py"", line 22, in _alltoall_single_in_dygraph
     group = collective._get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_communication_stream_all_gather.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_all_gather.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_all_gather.py"", line 12, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_all_gather.py"", line 12, in <module>
     task = dist.stream.all_gather(tensor_list, data, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_gather.py"", line 133, in all_gather
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_gather.py"", line 133, in all_gather
     return _all_gather_in_dygraph(tensor_or_tensor_list, tensor, group,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_gather.py"", line 57, in _all_gather_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_gather.py"", line 57, in _all_gather_in_dygraph
     group = collective._get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_communication_stream_all_reduce.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_all_reduce.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_all_reduce.py"", line 12, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_all_reduce.py"", line 12, in <module>
     task = dist.stream.all_reduce(data, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
     return _all_reduce_in_dygraph(tensor, op, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_distributed_communication_stream_broadcast.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_broadcast.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_broadcast.py"", line 11, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_broadcast.py"", line 11, in <module>
     task = dist.stream.broadcast(data, src=1, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\broadcast.py"", line 78, in broadcast
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\broadcast.py"", line 78, in broadcast
     return _broadcast_in_dygraph(tensor, src, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\broadcast.py"", line 20, in _broadcast_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\broadcast.py"", line 20, in _broadcast_in_dygraph
     group = collective._get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_communication_stream_recv.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_recv.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_recv.py"", line 9, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_recv.py"", line 9, in <module>
     task = dist.stream.send(data, dst=1, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\send.py"", line 79, in send
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\send.py"", line 79, in send
     return _send_in_dygraph(tensor, dst, group, sync_op, use_calc_stream)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\send.py"", line 20, in _send_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\send.py"", line 20, in _send_in_dygraph
     group = collective._get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_communication_stream_reduce.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_reduce.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_reduce.py"", line 11, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_reduce.py"", line 11, in <module>
     task = dist.stream.reduce(data, dst=0, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\reduce.py"", line 88, in reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\reduce.py"", line 88, in reduce
     return _reduce_in_dygraph(tensor, dst, op, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\reduce.py"", line 22, in _reduce_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\reduce.py"", line 22, in _reduce_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_distributed_communication_stream_reduce_scatter.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_reduce_scatter.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_reduce_scatter.py"", line 12, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_reduce_scatter.py"", line 12, in <module>
     dist.stream.reduce_scatter(data1, [data1, data2])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\reduce_scatter.py"", line 144, in reduce_scatter
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\reduce_scatter.py"", line 144, in reduce_scatter
     return _reduce_scatter_in_dygraph(tensor, tensor_or_tensor_list, op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\reduce_scatter.py"", line 66, in _reduce_scatter_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\reduce_scatter.py"", line 66, in _reduce_scatter_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_distributed_communication_stream_scatter.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_scatter.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_scatter.py"", line 9, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_scatter.py"", line 9, in <module>
     dist.stream.scatter(data1, src=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\scatter.py"", line 148, in scatter
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\scatter.py"", line 148, in scatter
     raise RuntimeError(""The input should be specified."")
 RuntimeError: The input should be specified.
 "
-paddle_distributed_communication_stream_send.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_communication_stream_send.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_send.py"", line 9, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_communication_stream_send.py"", line 9, in <module>
     task = dist.stream.send(data, dst=1, sync_op=False)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\send.py"", line 79, in send
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\send.py"", line 79, in send
     return _send_in_dygraph(tensor, dst, group, sync_op, use_calc_stream)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\send.py"", line 20, in _send_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\send.py"", line 20, in _send_in_dygraph
     group = collective._get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_CountFilterEntry.py,"  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_CountFilterEntry.py"", line 11
+paddle_distributed_CountFilterEntry.py,"  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_CountFilterEntry.py"", line 11
     input=input,
          ^
 SyntaxError: invalid syntax
 "
-paddle_distributed_destroy_process_group.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_destroy_process_group.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_destroy_process_group.py"", line 6, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_destroy_process_group.py"", line 6, in <module>
     group = dist.new_group([0, 1])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 384, in new_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 384, in new_group
     global_group = _get_default_group()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
 paddle_distributed_fleet_utils_HDFSClient.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_fleet_utils_HDFSClient.py"", line 10, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_fleet_utils_HDFSClient.py"", line 10, in <module>
     client.ls_dir(""hdfs:/test_hdfs_client"")
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\fs.py"", line 407, in handler
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\fs.py"", line 407, in handler
     return f(*args, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\fs.py"", line 551, in ls_dir
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\fs.py"", line 551, in ls_dir
     if not self.is_exist(fs_path):
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\fs.py"", line 407, in handler
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\fs.py"", line 407, in handler
     return f(*args, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\fs.py"", line 689, in is_exist
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\fs.py"", line 689, in is_exist
     ret, out = self._run_cmd(cmd, redirect_stderr=True, retry_times=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\fs.py"", line 482, in _run_cmd
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\utils\fs.py"", line 482, in _run_cmd
     ret, output = core.shell_execute_cmd(exe_cmd, 0, 0, redirect_stderr)
 NotImplementedError: (Unimplemented) This function(shell_get_command_output) is not implemented under _WIN32 or __APPLE__. (at ..\paddle\fluid\framework\io\shell.cc:373)
 
 "
-paddle_distributed_fleet_utils_recompute.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_fleet_utils_recompute.py"", line 79, in <module>
-    loss, param, grad = run_model(cuda_state, recompute_block=[1, 2])
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_fleet_utils_recompute.py"", line 65, in run_model
-    y_pred = model(x)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_fleet_utils_recompute.py"", line 44, in forward
-    inputs = recompute(self.total_func[i], inputs, **{""preserve_rng_state"": True})
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\utils\__init__.py"", line 129, in recompute
-    return fleet.recompute.recompute(function, *args, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\recompute\recompute.py"", line 503, in recompute
-    return RecomputeFunction.apply(function, preserve, *args, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\recompute\recompute.py"", line 263, in forward
-    raise RuntimeError(
-RuntimeError: Recompute with RNG perserve is not support current device: cpu.
-"
 paddle_distributed_get_group.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_get_group.py"", line 2, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_get_group.py"", line 2, in <module>
     gid = paddle.distributed.new_group([2,4,6])
 NameError: name 'paddle' is not defined
 "
-paddle_distributed_init_parallel_env.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_init_parallel_env.py"", line 40, in <module>
-    dist.spawn(train)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\spawn.py"", line 574, in spawn
-    procs_env_list = _get_subprocess_env_list(nprocs, options)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\spawn.py"", line 146, in _get_subprocess_env_list
-    block_windows_and_macos(options['backend'])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\launch_utils.py"", line 2009, in block_windows_and_macos
-    raise ValueError(
-ValueError: You are going to using gloo on windows, but currently is not supported
-"
-paddle_distributed_irecv.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_irecv.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_irecv.py"", line 8, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_irecv.py"", line 8, in <module>
     task = dist.isend(data, dst=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1662, in isend
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1662, in isend
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_isend.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_isend.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_isend.py"", line 8, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_isend.py"", line 8, in <module>
     task = dist.isend(data, dst=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1662, in isend
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1662, in isend
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_new_group.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_new_group.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
+W0330 22:19:17.700657 20472 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:19:17.705655 20472 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_new_group.py"", line 5, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_new_group.py"", line 5, in <module>
     gp = paddle.distributed.new_group([2,4,6])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 384, in new_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 384, in new_group
     global_group = _get_default_group()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
 paddle_distributed_ParallelEnv.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_ParallelEnv.py"", line 22, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_ParallelEnv.py"", line 22, in <module>
     dist.spawn(train, nprocs=2)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\spawn.py"", line 574, in spawn
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\spawn.py"", line 574, in spawn
     procs_env_list = _get_subprocess_env_list(nprocs, options)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\spawn.py"", line 146, in _get_subprocess_env_list
-    block_windows_and_macos(options['backend'])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\launch_utils.py"", line 2009, in block_windows_and_macos
-    raise ValueError(
-ValueError: You are going to using gloo on windows, but currently is not supported
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\spawn.py"", line 182, in _get_subprocess_env_list
+    raise RuntimeError(
+RuntimeError: the number of visible devices(1) is less than the number of spawn processes(2), please ensure that the correct `nprocs` argument is passed or the environment variable `CUDA_VISIBLE_DEVICES` is correctly configured.
 "
-paddle_distributed_ProbabilityEntry.py,"  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_ProbabilityEntry.py"", line 11
+paddle_distributed_ProbabilityEntry.py,"  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_ProbabilityEntry.py"", line 11
     input=input,
          ^
 SyntaxError: invalid syntax
 "
-paddle_distributed_recv.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_recv.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_recv.py"", line 8, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_recv.py"", line 8, in <module>
     dist.send(data, dst=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1475, in send
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1475, in send
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_reduce.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_reduce.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_reduce.py"", line 10, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_reduce.py"", line 10, in <module>
     dist.reduce(data, dst=0)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 787, in reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 787, in reduce
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_ReduceOp.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_ReduceOp.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_ReduceOp.py"", line 10, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_ReduceOp.py"", line 10, in <module>
     dist.all_reduce(data, op=dist.ReduceOp.SUM)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
     return stream.all_reduce(tensor,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
     return _all_reduce_in_dygraph(tensor, op, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_distributed_reduce_scatter.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_reduce_scatter.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_reduce_scatter.py"", line 12, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_reduce_scatter.py"", line 12, in <module>
     dist.reduce_scatter(data1, [data1, data2])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1909, in reduce_scatter
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1909, in reduce_scatter
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_scatter.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_scatter.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_scatter.py"", line 9, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_scatter.py"", line 9, in <module>
     dist.scatter(data1, src=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1161, in scatter
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1161, in scatter
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_send.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_send.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_send.py"", line 8, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_send.py"", line 8, in <module>
     dist.send(data, dst=1)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 1475, in send
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 1475, in send
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_sharding_group_sharded_parallel.py,"[2023-03-30 18:10:21,057] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+paddle_distributed_sharding_group_sharded_parallel.py,"[2023-03-30 22:20:04,592] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_sharding_group_sharded_parallel.py"", line 8, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_sharding_group_sharded_parallel.py"", line 8, in <module>
     group = paddle.distributed.new_group([0, 1])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 384, in new_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 384, in new_group
     global_group = _get_default_group()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_sharding_save_group_sharded_model.py,"[2023-03-30 18:10:23,345] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+paddle_distributed_sharding_save_group_sharded_model.py,"[2023-03-30 22:20:08,509] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_sharding_save_group_sharded_model.py"", line 8, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_sharding_save_group_sharded_model.py"", line 8, in <module>
     group = paddle.distributed.new_group([0, 1])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 384, in new_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 384, in new_group
     global_group = _get_default_group()
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_distributed_spawn.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_spawn.py"", line 48, in <module>
-    dist.spawn(train)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\spawn.py"", line 574, in spawn
+paddle_distributed_spawn.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+  warnings.warn(
+W0330 22:20:19.390580  6172 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:20:19.395581  6172 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
+C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\dygraph\parallel.py:655: UserWarning: The program will return to single-card operation. Please check 1, whether you use spawn or fleetrun to start the program. 2, Whether it is a multi-card program. 3, Is the current environment multi-card.
+  warnings.warn(""The program will return to single-card operation. ""
+C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+  warnings.warn(
+W0330 22:20:25.278578 22176 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:20:25.284577 22176 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
+C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\dygraph\parallel.py:655: UserWarning: The program will return to single-card operation. Please check 1, whether you use spawn or fleetrun to start the program. 2, Whether it is a multi-card program. 3, Is the current environment multi-card.
+  warnings.warn(""The program will return to single-card operation. ""
+Traceback (most recent call last):
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_spawn.py"", line 64, in <module>
+    dist.spawn(train, args=(True,), nprocs=2)
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\spawn.py"", line 574, in spawn
     procs_env_list = _get_subprocess_env_list(nprocs, options)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\spawn.py"", line 146, in _get_subprocess_env_list
-    block_windows_and_macos(options['backend'])
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\fleet\launch_utils.py"", line 2009, in block_windows_and_macos
-    raise ValueError(
-ValueError: You are going to using gloo on windows, but currently is not supported
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\spawn.py"", line 182, in _get_subprocess_env_list
+    raise RuntimeError(
+RuntimeError: the number of visible devices(1) is less than the number of spawn processes(2), please ensure that the correct `nprocs` argument is passed or the environment variable `CUDA_VISIBLE_DEVICES` is correctly configured.
 "
 paddle_distributed_split.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_split.py"", line 6, in <module>
-    paddle.set_device('gpu:%d'%paddle.distributed.ParallelEnv().dev_id)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\parallel.py"", line 208, in device_id
-    return self._device_id
-AttributeError: 'ParallelEnv' object has no attribute '_device_id'
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_split.py"", line 9, in <module>
+    emb_out = paddle.distributed.split(
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\layers\mpu\mp_ops.py"", line 748, in split
+    emb_out = _parallel_embedding(x,
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\layers\mpu\mp_ops.py"", line 571, in _parallel_embedding
+    output_parallel = _c_lookup_table(weight,
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\fleet\layers\mpu\mp_ops.py"", line 278, in _c_lookup_table
+    helper.append_op(type='c_embedding',
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\layer_helper.py"", line 45, in append_op
+    return self.main_program.current_block().append_op(*args, **kwargs)
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\framework.py"", line 4040, in append_op
+    op = Operator(
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\framework.py"", line 2890, in __init__
+    proto = OpProtoHolder.instance().get_op_proto(type)
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\framework.py"", line 2713, in get_op_proto
+    raise ValueError(""Operator \""%s\"" has not been registered."" % type)
+ValueError: Operator ""c_embedding"" has not been registered.
 "
-paddle_distributed_wait.py,"C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
+paddle_distributed_wait.py,"C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\parallel.py:173: UserWarning: Currently not a parallel execution environment, `paddle.distributed.init_parallel_env` will not do anything.
   warnings.warn(
+W0330 22:20:35.329566  2352 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:20:35.334564  2352 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_wait.py"", line 5, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_distributed_wait.py"", line 5, in <module>
     paddle.distributed.all_reduce(tindata, sync_op=True)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\all_reduce.py"", line 61, in all_reduce
     return stream.all_reduce(tensor,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 112, in all_reduce
     return _all_reduce_in_dygraph(tensor, op, group, sync_op,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\stream\all_reduce.py"", line 25, in _all_reduce_in_dygraph
     group = _get_global_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\communication\group.py"", line 86, in _get_global_group
     raise RuntimeError(""The global group is not initialized."")
 RuntimeError: The global group is not initialized.
 "
-paddle_incubate_nn_FusedFeedForward.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedFeedForward.py"", line 7, in <module>
-    out = fused_feedforward_layer(x)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py"", line 652, in forward
-    out = incubate_f.fused_feedforward(
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py"", line 138, in fused_feedforward
-    out, _, _, _, _, _, _, _, _, _, _ = _legacy_C_ops.fused_feedforward(
-AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_feedforward'
-"
-paddle_incubate_nn_FusedLinear.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedLinear.py"", line 7, in <module>
+paddle_incubate_nn_FusedLinear.py,"W0330 22:29:34.062916 22704 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:29:34.067915 22704 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
+Traceback (most recent call last):
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedLinear.py"", line 7, in <module>
     y = linear(x)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
     return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_linear.py"", line 94, in forward
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\incubate\nn\layer\fused_linear.py"", line 94, in forward
     return F.fused_linear(input, self.weight, self.bias,
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_matmul_bias.py"", line 109, in fused_linear
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\incubate\nn\functional\fused_matmul_bias.py"", line 109, in fused_linear
     return fused_matmul_bias(x, weight, bias, False, transpose_weight, name)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_matmul_bias.py"", line 60, in fused_matmul_bias
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\incubate\nn\functional\fused_matmul_bias.py"", line 60, in fused_matmul_bias
     return _legacy_C_ops.fused_gemm_epilogue(x, y, bias, 'trans_x',
 AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_gemm_epilogue'
 "
-paddle_incubate_nn_FusedMultiHeadAttention.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedMultiHeadAttention.py"", line 8, in <module>
-    output = multi_head_attn(query, None, None, attn_mask=attn_mask)  # [2, 4, 128]
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py"", line 421, in forward
-    out = incubate_f.fused_multi_head_attention(
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py"", line 656, in fused_multi_head_attention
-    ) = _legacy_C_ops.fused_attention(
-AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_attention'
-"
-paddle_incubate_nn_FusedMultiTransformer.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedMultiTransformer.py"", line 10, in <module>
-    enc_output = encoder_layers(enc_input, attn_mask)  # [2, 4, 128]
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py"", line 1393, in forward
-    out = incubate_f.fused_multi_transformer(
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py"", line 999, in fused_multi_transformer
-    cache_kv_out, final_out = _legacy_C_ops.fused_multi_transformer(
-AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_multi_transformer'
-"
-paddle_incubate_nn_FusedTransformerEncoderLayer.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_nn_FusedTransformerEncoderLayer.py"", line 10, in <module>
-    enc_output = encoder_layer(enc_input, attn_mask)  # [2, 4, 128]
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py"", line 875, in forward
-    attn_out = self.fused_attn(src, attn_mask=src_mask)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\fluid\dygraph\layers.py"", line 1012, in __call__
-    return self.forward(*inputs, **kwargs)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\layer\fused_transformer.py"", line 421, in forward
-    out = incubate_f.fused_multi_head_attention(
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\nn\functional\fused_transformer.py"", line 656, in fused_multi_head_attention
-    ) = _legacy_C_ops.fused_attention(
-AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_attention'
-"
-paddle_incubate_softmax_mask_fuse.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_softmax_mask_fuse.py"", line 8, in <module>
-    rst = incubate.softmax_mask_fuse(x, mask)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\operators\softmax_mask_fuse.py"", line 62, in softmax_mask_fuse
-    out = _legacy_C_ops.fused_softmax_mask(x, mask)
-AttributeError: module 'paddle.fluid.libpaddle.eager.ops.legacy' has no attribute 'fused_softmax_mask'
-"
-paddle_incubate_softmax_mask_fuse_upper_triangle.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_softmax_mask_fuse_upper_triangle.py"", line 7, in <module>
-    rst = incubate.softmax_mask_fuse_upper_triangle(x)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\operators\softmax_mask_fuse_upper_triangle.py"", line 62, in softmax_mask_fuse_upper_triangle
-    out = _legacy_C_ops.fused_softmax_mask_upper_triangle(x)
-NotImplementedError: (Unimplemented) Softmax mask fuse op only supports GPU now.
-  [Hint: Expected platform::is_gpu_place(ctx.GetPlace()) == true, but received platform::is_gpu_place(ctx.GetPlace()):0 != true:1.] (at ..\paddle/fluid/operators/fused_softmax_mask_upper_triangle_op.h:27)
-  [operator < fused_softmax_mask_upper_triangle > error]
-"
-paddle_incubate_xpu_resnet_block_ResNetBasicBlock.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_xpu_resnet_block_ResNetBasicBlock.py"", line 25, in <module>
+paddle_incubate_xpu_resnet_block_ResNetBasicBlock.py,"W0330 22:30:44.410660 12088 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:30:44.416662 12088 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
+Traceback (most recent call last):
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_incubate_xpu_resnet_block_ResNetBasicBlock.py"", line 25, in <module>
     out = resnet_basic_block.forward(x)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\xpu\resnet_block.py"", line 682, in forward
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\incubate\xpu\resnet_block.py"", line 682, in forward
     out = resnet_basic_block(
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\incubate\xpu\resnet_block.py"", line 142, in resnet_basic_block
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\incubate\xpu\resnet_block.py"", line 142, in resnet_basic_block
     ) = getattr(_C_ops, ""resnet_basic_block"")(
 AttributeError: module 'paddle.fluid.libpaddle.eager.ops' has no attribute 'resnet_basic_block'
 "
-paddle_io_DataLoader.py,"  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_io_DataLoader.py"", line 2
+paddle_io_DataLoader.py,"  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_io_DataLoader.py"", line 2
     For reading iterable dataset with multiprocess Dataloader, please see paddle.io.IterableDataset
         ^
 SyntaxError: invalid syntax
 "
-paddle_nn_CosineSimilarity.py,"  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_CosineSimilarity.py"", line 1
+paddle_nn_CosineSimilarity.py,"  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_nn_CosineSimilarity.py"", line 1
     Case 0:
          ^
 SyntaxError: invalid syntax
 "
-paddle_nn_functional_class_center_sample.py,"[2023-03-30 18:18:58,362] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+paddle_nn_functional_class_center_sample.py,"[2023-03-30 22:45:05,904] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+W0330 22:45:08.352483  8632 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:45:08.358484  8632 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_class_center_sample.py"", line 15, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_class_center_sample.py"", line 15, in <module>
     dist.all_gather(label_list, label)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_nn_functional_cosine_similarity.py,"  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_cosine_similarity.py"", line 1
+paddle_nn_functional_cosine_similarity.py,"  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_cosine_similarity.py"", line 1
     Case 0:
          ^
 SyntaxError: invalid syntax
 "
-paddle_nn_functional_margin_cross_entropy.py,"[2023-03-30 18:19:45,613] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+paddle_nn_functional_margin_cross_entropy.py,"[2023-03-30 22:48:20,565] [    INFO] topology.py:215 - HybridParallelInfo: rank_id: 0, mp_degree: 1, sharding_degree: 1, pp_degree: 1, dp_degree: 1, mp_group: [0],  sharding_group: [0], pp_group: [0], dp_group: [0], check/clip group: [0]
+W0330 22:48:22.995057  3248 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.6, Driver API Version: 12.1, Runtime API Version: 11.2
+W0330 22:48:23.002058  3248 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
 Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_margin_cross_entropy.py"", line 19, in <module>
+  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_nn_functional_margin_cross_entropy.py"", line 19, in <module>
     dist.all_gather(label_list, label)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 946, in all_gather
     group = _get_default_group() if group is None else group
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
+  File ""C:\Users\phalt\AppData\Roaming\Python\Python39\site-packages\paddle\distributed\collective.py"", line 125, in _get_default_group
     assert is_initialized(), (
 AssertionError: Call paddle.distributed.init_parallel_env first to initialize the distributed environment.
 "
-paddle_NPUPlace.py,"  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_NPUPlace.py"", line 1
+paddle_NPUPlace.py,"  File ""E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\api_documentation_code\paddle_NPUPlace.py"", line 1
     System Message: ERROR/3 (docstring of paddle.fluid.libpaddle.NPUPlace, line 6)
            ^
 SyntaxError: invalid syntax
-"
-paddle_randint_like.py,"Traceback (most recent call last):
-  File ""C:\Users\vatsa\OneDrive\Desktop\FreeFuzz\Scrape\api_documentation_code\paddle_randint_like.py"", line 6, in <module>
-    out1 = paddle.randint_like(x, low=-5, high=5)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\tensor\random.py"", line 879, in randint_like
-    shape = paddle.shape(x)
-  File ""C:\Users\vatsa\AppData\Local\Programs\Python\Python39\lib\site-packages\paddle\tensor\attribute.py"", line 118, in shape
-    out = _C_ops.shape(input)
-RuntimeError: (NotFound) The kernel with key (CPU, NCHW, float16) of kernel `shape` is not registered.
-  [Hint: Expected kernel_iter == iter->second.end() && kernel_key.backend() == Backend::CPU != true, but received kernel_iter == iter->second.end() && kernel_key.backend() == Backend::CPU:1 == true:1.] (at ..\paddle\phi\core\kernel_factory.cc:147)
-
 "

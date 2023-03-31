@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0b34589e686d4cdc88fcb8222978ea49","collectionName":"paddle.fft.fft2","type":"collection"}
