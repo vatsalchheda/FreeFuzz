@@ -36,5 +36,3 @@ with open(__file__.replace("__init__.py", "paddle.txt"), "r") as f1:
         l = l.strip()
         if skipped not in l:
             hijack(paddle, l)
-
-
