@@ -32,6 +32,7 @@ if __name__ == "__main__":
     output_cfg = freefuzz_cfg["output"]
     torch_output_dir = output_cfg["torch_output"]
     tf_output_dir = output_cfg["tf_output"]
+    paddle_output_dir = output_cfg["paddle_output"]
 
     # mutation configuration
     mutation_cfg = freefuzz_cfg["mutation"]
@@ -90,5 +91,29 @@ if __name__ == "__main__":
                     MyTF.test_with_oracle(api, OracleType.CUDA)
                 if precision_oracle:
                     MyTF.test_with_oracle(api, OracleType.PRECISION)
+    elif library.lower() in ["paddlepaddle", "paddle"]:
+        import paddle
+        from classes.paddle_library import PaddleLibrary
+        from classes.paddle_api import PaddleAPI
+        from classes.database import PaddleDatabase
+        from utils.skip import need_skip_paddle
+
+        PaddleDatabase.database_config(host, port, mongo_cfg["paddle_database"])
+
+        # if cuda_oracle and not torch.cuda.is_available():
+        #     print("YOUR LOCAL DOES NOT SUPPORT CUDA")
+        #     cuda_oracle = False
+        # Pytorch TEST
+        MyPaddle = PaddleLibrary(paddle_output_dir, diff_bound, time_bound,
+                            time_thresold)
+        for _ in range(each_api_run_times):
+            api = PaddleAPI(api_name)
+            api.mutate(enable_value, enable_type, enable_db)
+            if crash_oracle:
+                MyPaddle.test_with_oracle(api, OracleType.CRASH)
+            if cuda_oracle:
+                MyPaddle.test_with_oracle(api, OracleType.CUDA)
+            if precision_oracle:
+                MyPaddle.test_with_oracle(api, OracleType.PRECISION)
     else:
         print(f"WE DO NOT SUPPORT SUCH DL LIBRARY: {library}!")

@@ -131,6 +131,15 @@ class TFDB(Database):
     def get_api_list(self):
         self.api_list = super().get_api_list(self.DB, "tf.")
         return self.api_list
+    
+class PaddleDB(Database):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def get_api_list(self):
+        self.api_list = super().get_api_list(self.DB, "paddle.")
+        return self.api_list
+    
 """
 Database for each library
 NOTE:
@@ -139,3 +148,4 @@ Like TFDatabase.database_config("127.0.0.1", 27109, "tftest")
 """
 TorchDatabase = TorchDB()
 TFDatabase = TFDB()
+PaddleDatabase = PaddleDB()
