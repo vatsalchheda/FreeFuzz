@@ -19,6 +19,9 @@ class ArgType(IntEnum):
     KERAS_TENSOR = 13
     TF_VARIABLE = 14
     TF_OBJECT = 15
+    PADDLE_OBJECT = 16
+    PADDLE_TENSOR = 17
+    PADDLE_DTYPE = 18
     
 
 

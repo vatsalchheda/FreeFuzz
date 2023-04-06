@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f37aa25498bd4a9ea982c4452637f36f","collectionName":"paddle.einsum","type":"collection"}

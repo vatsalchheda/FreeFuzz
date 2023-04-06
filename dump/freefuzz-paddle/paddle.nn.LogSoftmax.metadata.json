@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"467efb9c544c44dcaad0f554fb324a6c","collectionName":"paddle.nn.LogSoftmax","type":"collection"}

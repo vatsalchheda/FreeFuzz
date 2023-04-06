@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"91311e3ec9ea406aab471b35615dec89","collectionName":"paddle.geometric.segment_sum","type":"collection"}

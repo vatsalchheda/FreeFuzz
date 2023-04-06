@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"194678f6a2d542808fa2d08a82095001","collectionName":"paddle.geometric.segment_mean","type":"collection"}

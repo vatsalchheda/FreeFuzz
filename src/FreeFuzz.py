@@ -1,4 +1,5 @@
 from utils.skip import need_skip_torch
+from utils.skip import need_skip_paddle
 import configparser
 from os.path import join
 import subprocess
@@ -26,6 +27,7 @@ if __name__ == "__main__":
     output_cfg = freefuzz_cfg["output"]
     torch_output_dir = output_cfg["torch_output"]
     tf_output_dir = output_cfg["tf_output"]
+    paddle_output_dir = output_cfg["paddle_output"]
 
     if "torch" in libs:
         # database configuration
@@ -62,8 +64,27 @@ if __name__ == "__main__":
                 if res.returncode != 0:
                     dump_data(f"{api_name}\n", join(tf_output_dir, "runcrash.txt"), "a")
     
+    if "paddle" in libs:
+    # database configuration
+        from classes.database import PaddleDatabase
+        PaddleDatabase.database_config(host, port, mongo_cfg["paddle_database"])
+
+        for api_name in PaddleDatabase.get_api_list():
+            print(api_name)
+            if need_skip_paddle(api_name):
+                continue
+            try:
+                res = subprocess.run(["python", "FreeFuzz_api.py", config_name, "paddle", api_name], shell=False, timeout=100)
+            except subprocess.TimeoutExpired:
+                dump_data(f"{api_name}\n", join(paddle_output_dir, "timeout.txt"), "a")
+            except Exception as e:
+                dump_data(f"{api_name}\n  {e}\n", join(paddle_output_dir, "runerror.txt"), "a")
+            else:
+                if res.returncode != 0:
+                    dump_data(f"{api_name}\n", join(paddle_output_dir, "runcrash.txt"), "a")
+    
     not_test = []
     for l in libs:
-        if l not in ["tf", "torch"]: not_test.append(l)
+        if l not in ["tf", "torch","paddle"]: not_test.append(l)
     if len(not_test):
         print(f"WE DO NOT SUPPORT SUCH DL LIBRARY: {not_test}!")

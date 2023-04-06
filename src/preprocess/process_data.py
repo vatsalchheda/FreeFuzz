@@ -27,20 +27,21 @@ def loadAPIs(api_file='../data/torch_APIdef.txt'):
     with open(api_file, "r") as fin:
         lines = fin.readlines()
         for line in lines:
-            line = line.strip()
-            API_name = line.split("(")[0]
-            API_args_match = re.search("\((.*)\)", line)
-            try:
-                API_args_text = API_args_match.group(1)
-            except:
-                # with open("log/tf/api_def_error.txt", 'a') as f:
-                #     f.write(line + "\n")
-                # continue
-                raise ValueError(line)
-            # print(API_args_text)
-            if API_name not in API_def.keys():
-                API_def[API_name] = line
-                API_args[API_name] = API_args_text
+            if not line.startswith("paddle.fluid"):
+                line = line.strip()
+                API_name = line.split("(")[0]
+                API_args_match = re.search("\((.*)\)", line)
+                try:
+                    API_args_text = API_args_match.group(1)
+                except:
+                    # with open("log/tf/api_def_error.txt", 'a') as f:
+                    #     f.write(line + "\n")
+                    # continue
+                    raise ValueError(line)
+                # print(API_args_text)
+                if API_name not in API_def.keys():
+                    API_def[API_name] = line
+                    API_args[API_name] = API_args_text
 
 
 def query_argname(arg_name):
@@ -128,11 +129,13 @@ def write_API_signature(library_name='torch'):
         arg_names = []
         for temp_name in API_args[api_name].split(","):
             temp_name = temp_name.strip()
+            print(temp_name)
             if len(temp_name) == 0 or temp_name == "*":
                 continue
             if "=" in temp_name:
                 temp_name = temp_name[:temp_name.find("=")]
-            arg_names.append(temp_name)
+            arg_names.append(temp_name.strip())
+        print(arg_names)
         DB[signature_collection].insert_one({
             "api": api_name,
             "args": arg_names
@@ -154,6 +157,8 @@ def write_similarity(library_name='torch'):
 
         print(api_name)
         arg_names = DB["signature"].find_one({"api": api_name})["args"]
+        # arg_names = DB["signature"].find_one({"api": api_name})
+        # print(arg_names)
         for arg_name in arg_names:
             APIs, probs = similarAPI(api_name, arg_name)
             sim_dict = {}
@@ -166,7 +171,7 @@ def write_similarity(library_name='torch'):
 
 if __name__ == "__main__":
     target = sys.argv[1]
-    if target not in ["torch", "tf"]:
+    if target not in ["torch", "tf", "paddle"]:
         print("Only support 'torch' or 'tf'!")
         assert(0)
 
@@ -185,5 +190,8 @@ if __name__ == "__main__":
     DB = pymongo.MongoClient(host, port)[mongo_cfg[f"{target}_database"]]
 
     loadAPIs(join("..", "data", f"{target}_APIdef.txt"))
+
+    print(API_args)
+    print(API_def)
     write_API_signature(target)
     write_similarity(target)

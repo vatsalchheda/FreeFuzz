@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"bec7d61389a54ba598313e14930e6b5d","collectionName":"paddle.nn.initializer.calculate_gain","type":"collection"}
