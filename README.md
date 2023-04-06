@@ -136,5 +136,5 @@ Note that you should specify the configuration file you want to use.
 
 ## Notes
 
-1. Some APIs will be skipped since they may crash the program. You can set what you want to skip in the file `src/config/skip_torch.txt` or `src/config/skip_tf`.
+1. Some APIs will be skipped since they may crash the program. You can set what you want to skip in the file `src/config/skip_torch.txt` or `src/config/skip_tf` or `src/config/skip_paddle`.
 2. For the details of three mutation strategies, please refer to our paper.
