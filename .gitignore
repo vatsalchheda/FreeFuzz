@@ -147,3 +147,4 @@ src/paddle-output/precision-oracle/success/paddle.tril_indices/1.py
 src/paddle-output/precision-oracle/success/paddle.triu_indices/1.py
 src/paddle-output/precision-oracle/success/paddle.uniform/1.py
 src/paddle-output/precision-oracle/success/paddle.zeros/1.py
+Scrape/chromedriver.exe

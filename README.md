@@ -29,7 +29,7 @@ mongorestore dump/
 
 #### Collecting Data by Yourself
 
-1. Go to `src/instrumentation/{torch, tensorflow}` to see how to intrument the dynamic information and add them into the database
+1. Go to `src/instrumentation/{torch, tensorflow, paddle}` to see how to intrument the dynamic information and add them into the database
 2. After adding invocation data, you should run the following command to preprocess the data for PyTorch
 
 ```shell
@@ -39,6 +39,11 @@ cd src && python preprocess/process_data.py torch
 or for TensorFlow
 ```shell
 cd src && python preprocess/process_data.py tf
+```
+
+or for PaddlePaddle
+```shell
+cd src && python preprocess/process_data.py paddle
 ```
 
 ### 3. Configuration
@@ -113,6 +118,12 @@ Or run this command to test TensorFlow
 
 ```shell
 cd src && python FreeFuzz.py --conf demo_tf.conf
+```
+
+Or run this command to test PaddlePaddle
+
+```shell
+cd src && python FreeFuzz.py --conf demo_paddle.conf
 ```
 
 To run the full experiment, run the following command
