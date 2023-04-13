@@ -64,12 +64,12 @@ for file_name in file_list:
             print(f"{file_name} produced an error:")
             # print(result.stderr.decode())
 
-with open('./Errors/errors_wo_Hijack.txt', 'w') as fp:
+with open('./Errors/errors_w_Hijack.txt', 'w') as fp:
     fp.write('\n'.join('%s %s' % x for x in error_files))
 # print the list of error files
 
 # Open a CSV file for writing
-with open('./Errors/errors_wo_Hijack.csv', 'w', newline='') as file:
+with open('./Errors/errors_w_Hijack.csv', 'w', newline='') as file:
     # Create a CSV writer object
     writer = csv.writer(file)
 

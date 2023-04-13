@@ -14,7 +14,7 @@ for link in links:
         index = elems.index('api')
         final.append(".".join(elems[index+1:])[:-8])
 
-f = open("list_apis.txt", "a")
+f = open("paddle.txt", "a")
 for l in final:
     f.write(l)
     f.write("\n")
