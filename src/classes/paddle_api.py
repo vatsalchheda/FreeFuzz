@@ -46,6 +46,7 @@ class PaddleArgument(Argument):
             return code
         elif self.type == ArgType.PADDLE_TENSOR:
             dtype = self.dtype
+            # print(dtype)
             max_value = self.max_value
             min_value = self.min_value
             if low_precision:
@@ -54,9 +55,9 @@ class PaddleArgument(Argument):
             suffix = ""
             if is_cuda:
                 suffix = ".cuda()"
-            if dtype.is_floating_point:
+            if str(dtype).startswith("float"):
                 code = f"{var_name}_tensor = paddle.rand({self.shape}, dtype={dtype})\n"
-            elif dtype.is_complex:
+            elif str(dtype).startswith("complex"):
                 code = f"{var_name}_tensor = paddle.rand({self.shape}, dtype={dtype})\n"
             elif dtype == paddle.bool:
                 code = f"{var_name}_tensor = paddle.randint(0,2,{self.shape}, dtype={dtype})\n"
@@ -185,8 +186,8 @@ class PaddleArgument(Argument):
         if isinstance(signature, str) and signature == "paddledevice":
             value = paddle.device("cpu")
             return PaddleArgument(value, ArgType.PADDLE_OBJECT)
-        if isinstance(signature, str) and signature == "paddlememory_format":
-            value = choice(PaddleArgument._memory_format)
+        # if isinstance(signature, str) and signature == "paddlememory_format":
+        #     value = choice(PaddleArgument._memory_format)
             return PaddleArgument(value, ArgType.PADDLE_OBJECT)
         if isinstance(signature, str) and signature == "paddle.strided":
             return PaddleArgument("paddle.strided", ArgType.PADDLE_OBJECT)
@@ -249,7 +250,7 @@ class PaddleArgument(Argument):
         elif dtype in [paddle.float32, paddle.float64]:
             return paddle.float16
         elif dtype in [paddle.complex64, paddle.complex128]:
-            return paddle.complex32
+            return paddle.complex64
         return dtype
 
     @staticmethod
@@ -400,6 +401,5 @@ class PaddleAPI(API):
         args = {}
         for key in record.keys():
             if key != "output_signature":
-                args[key] = PaddleArgument.generate_arg_from_signature(
-                    record[key])
+                args[key] = PaddleArgument.generate_arg_from_signature(record[key])
         return args
