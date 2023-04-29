@@ -50,7 +50,7 @@ error_files = []
 for file_name in file_list:
 
     # check if the file is a Python file
-    if file_name.endswith('.py') and not file_name.startswith('paddle_fluid'):
+    if file_name.endswith('.py'):# and not file_name.startswith('paddle_fluid'):
 
         # build the command to run the file using the Python interpreter
         command = f'python {os.path.join(dir_path, file_name)}'
