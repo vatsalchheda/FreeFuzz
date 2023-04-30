@@ -1,0 +1,16 @@
+results = dict()
+import paddle
+arg_1_0 = 2
+arg_1 = [arg_1_0,]
+arg_2 = "int64"
+try:
+  results["res_cpu"] = paddle.empty(arg_1,dtype=arg_2,)
+except Exception as e:
+  results["err_cpu"] = "ERROR:"+str(e)
+arg_1 = [arg_1_0,]
+try:
+  results["res_gpu"] = paddle.empty(arg_1,dtype=arg_2,)
+except Exception as e:
+  results["err_gpu"] = "ERROR:"+str(e)
+
+print(results)
