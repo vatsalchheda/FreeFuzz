@@ -1,0 +1,12 @@
+results = dict()
+import paddle
+import time
+arg_1 = "gpu:0"
+start = time.time()
+results["time_low"] = paddle.device.cuda.memory_reserved(arg_1,)
+results["time_low"] = time.time() - start
+start = time.time()
+results["time_high"] = paddle.device.cuda.memory_reserved(arg_1,)
+results["time_high"] = time.time() - start
+
+print(results)

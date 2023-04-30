@@ -1,0 +1,10 @@
+import paddle
+arg_1_tensor = paddle.randint(-128,16,[2], dtype=paddle.float32)
+arg_1 = arg_1_tensor.clone()
+arg_2_tensor = paddle.randint(-1024,512,[2], dtype=paddle.float32)
+arg_2 = arg_2_tensor.clone()
+arg_3 = 18.00001
+arg_4 = 56.00000001
+arg_5 = "mean"
+arg_6 = "ignore_nan"
+res = paddle.isclose(arg_1,arg_2,rtol=arg_3,atol=arg_4,equal_nan=arg_5,name=arg_6,)
