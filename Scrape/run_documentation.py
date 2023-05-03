@@ -54,6 +54,7 @@ for file_name in file_list:
 
         # build the command to run the file using the Python interpreter
         command = f'python {os.path.join(dir_path, file_name)}'
+        print(f"Running {file_name}")
 
         # execute the command using the subprocess module
         result = subprocess.run(command, shell=True, capture_output=True)
@@ -64,12 +65,12 @@ for file_name in file_list:
             print(f"{file_name} produced an error:")
             # print(result.stderr.decode())
 
-with open('./Errors/errors_w_Hijack.txt', 'w') as fp:
+with open('./Errors/errors_with_Hijack.txt', 'w') as fp:
     fp.write('\n'.join('%s %s' % x for x in error_files))
 # print the list of error files
 
 # Open a CSV file for writing
-with open('./Errors/errors_w_Hijack.csv', 'w', newline='') as file:
+with open('./Errors/errors_with_Hijack.csv', 'w', newline='') as file:
     # Create a CSV writer object
     writer = csv.writer(file)
 

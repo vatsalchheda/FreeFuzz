@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # The following code completes the function: subtract 10 from the data greater than 0 in x, add 10 to the data less than 0 in x, and sum all the data.
 import numpy as np
 import paddle.fluid as fluid

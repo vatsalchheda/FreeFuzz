@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 
 im_info = fluid.data(name="im_info", shape=[None, 3],

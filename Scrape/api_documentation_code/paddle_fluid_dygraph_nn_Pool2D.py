@@ -3,7 +3,7 @@ from paddle.fluid.dygraph.base import to_variable
 import numpy as np
 
 with fluid.dygraph.guard():
-   data = numpy.random.random((3, 32, 32, 5)).astype('float32')
+   data = np.random.random((3, 32, 32, 5)).astype('float32')
    pool2d = fluid.dygraph.Pool2D(pool_size=2,
                   pool_type='max',
                   pool_stride=1,

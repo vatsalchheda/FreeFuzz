@@ -1,4 +1,6 @@
 import paddle
+paddle.enable_static()
+import paddle
 import paddle.fluid as fluid
 import paddle.dataset.mnist as mnist
 
@@ -34,7 +36,7 @@ fluid.default_main_program()).with_data_parallel(
     exec_strategy=exec_strategy)
 
 for epoch_id in range(2):
-reader.start()
+    reader.start()
 try:
     while True:
         exe.run(compiled_prog, fetch_list=[loss.name])

@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import numpy as np
 from paddle.fluid import layers
 from paddle.fluid import contrib

@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 import numpy
 x = fluid.data(name="x", shape=[2, 1], dtype='float32')

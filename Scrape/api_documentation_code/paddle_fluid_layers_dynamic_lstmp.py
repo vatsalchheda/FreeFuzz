@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 dict_dim, emb_dim = 128, 64
 data = fluid.data(name='sequence', shape=[None], dtype='int64', lod_level=1)

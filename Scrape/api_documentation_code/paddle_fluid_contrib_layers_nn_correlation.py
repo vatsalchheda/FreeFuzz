@@ -1,12 +1,17 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 
+x_shape = [3,4]
+x_type = 'int32'
+
 x1 = fluid.layers.data(name='x1',
-                   shape=x_shape,
-                   dtype=x_type,
+                   shape=[3,4],   # shape = x_shape
+                   dtype='int32', # dtype = x_type
                    append_batch_size=False)
 x2 = fluid.layers.data(name='x2',
-                    shape=x_shape,
-                    dtype=x_type,
+                    shape=[3,4],   # shape = x_shape
+                    dtype='int32', # dtype = x_type
                     append_batch_size=False)
 
 

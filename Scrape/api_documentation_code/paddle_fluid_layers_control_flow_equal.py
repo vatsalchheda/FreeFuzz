@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 import numpy as np
 out_cond =fluid.data(name="input1", shape=[2], dtype='bool')

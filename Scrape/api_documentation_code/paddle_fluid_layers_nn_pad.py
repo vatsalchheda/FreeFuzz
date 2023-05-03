@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # x is a rank 2 tensor variable
 import paddle.fluid as fluid
 x = fluid.data(name='data', shape=[300, 300], dtype='float32')

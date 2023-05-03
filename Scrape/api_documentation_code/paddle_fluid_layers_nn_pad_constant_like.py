@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # x is a rank 4 tensor variable, x.shape = (2, 3, 2, 3)
 # y is a rank 4 tensor variable, y.shape = (1, 3, 1, 3)
 import paddle.fluid as fluid

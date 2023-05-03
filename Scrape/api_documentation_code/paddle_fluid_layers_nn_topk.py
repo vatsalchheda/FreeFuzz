@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 import paddle.fluid.layers as layers
 # set batch size=None
