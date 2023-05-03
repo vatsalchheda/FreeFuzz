@@ -1,0 +1,17 @@
+[run]
+source = .
+branch = True
+omit =
+    test/*
+    debug_*.py
+	write_tools.py
+	decorate_cls.py
+	decorate_func.py
+    */__init__.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:
