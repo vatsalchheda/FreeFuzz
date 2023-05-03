@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 
 sentence = fluid.data(name='sentence', shape=[None, 32], dtype='float32', lod_level=1)

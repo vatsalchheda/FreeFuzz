@@ -1,2 +1,3 @@
-System Message: WARNING/2 (/usr/local/lib/python3.8/site-packages/paddle/fluid/contrib/mixed_precision/bf16/amp_utils.py:docstring of paddle.fluid.contrib.mixed_precision.bf16.amp_utils.cast_model_to_bf16, line 10)
-Block quote ends without a blank line; unexpected unindent.
+import paddle
+
+paddle.fluid.contrib.mixed_precision.bf16.amp_utils.cast_model_to_bf16(paddle.fluid.default_main_program(), startup_prog=None, amp_lists=None, use_bf16_guard=True)

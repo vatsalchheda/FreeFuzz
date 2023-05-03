@@ -1,2 +1,3 @@
-System Message: ERROR/3 (/usr/local/lib/python3.8/site-packages/paddle/fluid/contrib/slim/quantization/quant2_int8_mkldnn_pass.py:docstring of paddle.fluid.contrib.slim.quantization.quant2_int8_mkldnn_pass.Quant2Int8MkldnnPass, line 3)
-Unexpected indentation.
+import paddle
+
+paddle.fluid.contrib.slim.quantization.quant_int8_mkldnn_pass.QuantInt8MkldnnPass(_scope=None, _place=None)

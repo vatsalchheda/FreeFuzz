@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 
 # input is a Tensor which shape is [3, 9, 5]

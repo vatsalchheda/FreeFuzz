@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 input = fluid.data(name="input", shape=[64, 1], dtype="int64")
 label = fluid.data(name="label", shape=[64, 1], dtype="int64")

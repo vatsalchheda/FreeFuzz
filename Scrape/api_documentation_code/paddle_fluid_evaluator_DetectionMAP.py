@@ -1,4 +1,6 @@
-exe = fluid.executor(place)
+import paddle
+import paddle.fluid as fluid
+exe = fluid.executor(paddle.CUDAPlace(0))
 map_evaluator = fluid.Evaluator.DetectionMAP(input,
     gt_label, gt_box, gt_difficult)
 cur_map, accum_map = map_evaluator.get_map_var()

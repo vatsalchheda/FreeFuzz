@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid.layers as layers
 ins = layers.data(name='Ins', shape=[-1,32], lod_level=0, dtype='float64')
 ins_tag = layers.data(name='Ins_tag', shape=[-1,16], lod_level=0, dtype='int64')

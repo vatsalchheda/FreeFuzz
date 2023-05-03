@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # position_sensitive=True
 import paddle.fluid as fluid
 input = fluid.data(name="input",

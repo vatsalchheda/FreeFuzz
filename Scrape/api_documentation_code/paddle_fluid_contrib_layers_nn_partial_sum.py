@@ -1,2 +1,8 @@
-System Message: WARNING/2 (/usr/local/lib/python3.8/site-packages/paddle/fluid/contrib/layers/nn.py:docstring of paddle.fluid.contrib.layers.nn.partial_sum, line 28)
-Explicit markup ends without a blank line; unexpected unindent.
+import paddle
+x = [[0, 1, 2],
+[3, 4, 5]]
+
+y = [[6, 7 ,8],
+[9, 10, 11]]
+
+output = paddle.fluid.contrib.layers.nn.partial_sum([x, y], start_index=0, length=2)

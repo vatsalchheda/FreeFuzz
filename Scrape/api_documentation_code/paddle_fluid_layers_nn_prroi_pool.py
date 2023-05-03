@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 ## prroi_pool without batch_roi_num
 import paddle.fluid as fluid
 x = fluid.data(name='x', shape=[None, 490, 28, 28], dtype='float32')

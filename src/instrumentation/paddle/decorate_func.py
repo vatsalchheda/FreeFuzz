@@ -3,7 +3,6 @@ import json
 import os
 from .write_tools import write_fn
 
-
 def decorate_function(func, hint):
     @wraps(func)
     def wrapper(*args, **kwargs):

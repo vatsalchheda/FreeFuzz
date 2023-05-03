@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # Example1: set Regularizer in optimizer
 import paddle.fluid as fluid
 
