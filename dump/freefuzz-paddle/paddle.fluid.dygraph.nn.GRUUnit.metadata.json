@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"cfce44945feb4ebbb298036fc8d71efa","collectionName":"paddle.fluid.dygraph.nn.GRUUnit","type":"collection"}

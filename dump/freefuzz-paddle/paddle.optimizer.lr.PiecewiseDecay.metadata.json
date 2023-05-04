@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"1c4070ce209f41359dfa439db94c1dfa","collectionName":"paddle.optimizer.lr.PiecewiseDecay","type":"collection"}

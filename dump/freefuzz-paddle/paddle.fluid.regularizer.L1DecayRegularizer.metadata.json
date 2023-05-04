@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"d9638083c75b4616b4e3cc954885409b","collectionName":"paddle.fluid.regularizer.L1DecayRegularizer","type":"collection"}

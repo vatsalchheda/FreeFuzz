@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"b2fa570f408c488898445bca9444976d","collectionName":"paddle.regularizer.L1Decay","type":"collection"}

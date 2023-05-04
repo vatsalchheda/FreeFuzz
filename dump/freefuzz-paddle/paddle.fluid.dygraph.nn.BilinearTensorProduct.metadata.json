@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"92ee982d721d415fb361fdef0989f080","collectionName":"paddle.fluid.dygraph.nn.BilinearTensorProduct","type":"collection"}

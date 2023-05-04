@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"eb363b3b4e994c47818ad1ed5b8522bf","collectionName":"paddle.incubate.nn.FusedMultiTransformer","type":"collection"}

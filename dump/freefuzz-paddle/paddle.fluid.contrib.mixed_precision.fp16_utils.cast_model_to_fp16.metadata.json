@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"a654a1b795884cbb80e9d0453dcdc583","collectionName":"paddle.fluid.contrib.mixed_precision.fp16_utils.cast_model_to_fp16","type":"collection"}

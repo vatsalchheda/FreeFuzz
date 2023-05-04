@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"875865107fee43dbb7ccaeeca7e2a346","collectionName":"paddle.nn.functional.adaptive_avg_pool3d","type":"collection"}

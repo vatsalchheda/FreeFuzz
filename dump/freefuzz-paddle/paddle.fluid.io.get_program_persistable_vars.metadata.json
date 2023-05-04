@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"18cba011b6984f6a888a153b0aa423d7","collectionName":"paddle.fluid.io.get_program_persistable_vars","type":"collection"}

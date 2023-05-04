@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"373cead457d7408bb2494f3162154310","collectionName":"paddle.fluid.io.save_inference_model","type":"collection"}

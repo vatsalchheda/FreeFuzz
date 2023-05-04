@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"82fde4e387ea4ca4bdf8e1e2335c59a5","collectionName":"paddle.vision.transforms.BaseTransform","type":"collection"}

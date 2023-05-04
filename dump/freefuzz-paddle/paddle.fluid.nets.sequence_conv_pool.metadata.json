@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"a9dff32a6edd493e9f632381e720eb8f","collectionName":"paddle.fluid.nets.sequence_conv_pool","type":"collection"}

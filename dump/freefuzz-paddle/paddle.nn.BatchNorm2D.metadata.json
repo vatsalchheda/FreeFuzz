@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"52106ea54b5d451eb4e732fe06d1437d","collectionName":"paddle.nn.BatchNorm2D","type":"collection"}
