@@ -1,9 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-256,2,[3, 4], dtype=paddle.float16)
+float_tensor = paddle.rand([498, 257], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-8,128,[4, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([4, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.mm(arg_1,arg_2,)

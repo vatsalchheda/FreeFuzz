@@ -1,25 +1,29 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-32,16384,[4, 4, 4], dtype=paddle.complex64)
+int_tensor = paddle.randint(low=-128, high=128, shape=[64, 10], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_1_tensor = int8_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_0 = 2
+arg_2_0 = 36.0
 arg_2 = [arg_2_0,]
 arg_3_0 = 0
 arg_3 = [arg_3_0,]
-arg_4_0 = 3
-arg_4_1 = 2
-arg_4_2 = 4
-arg_4 = [arg_4_0,arg_4_1,arg_4_2,]
+int_tensor = paddle.randint(low=-128, high=128, shape=[1], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_4_0_tensor = int8_tensor
+arg_4_0 = arg_4_0_tensor.clone()
+arg_4 = [arg_4_0,]
 start = time.time()
-results["time_low"] = paddle.slice(arg_1,arg_2,starts=arg_3,ends=arg_4,)
+results["time_low"] = paddle.slice(arg_1,axes=arg_2,starts=arg_3,ends=arg_4,)
 results["time_low"] = time.time() - start
-arg_1 = arg_1_tensor.clone().type(paddle.complex128)
+arg_1 = arg_1_tensor.clone().type(paddle.int64)
 arg_2 = [arg_2_0,]
 arg_3 = [arg_3_0,]
-arg_4 = [arg_4_0,arg_4_1,arg_4_2,]
+arg_4_0 = arg_4_0_tensor.clone().type(paddle.int32)
+arg_4 = [arg_4_0,]
 start = time.time()
-results["time_high"] = paddle.slice(arg_1,arg_2,starts=arg_3,ends=arg_4,)
+results["time_high"] = paddle.slice(arg_1,axes=arg_2,starts=arg_3,ends=arg_4,)
 results["time_high"] = time.time() - start
 
 print(results)

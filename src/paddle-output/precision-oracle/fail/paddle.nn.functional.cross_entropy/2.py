@@ -1,17 +1,28 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-8192,64,[-1, 10], dtype=paddle.float16)
+float_tensor = paddle.rand([32, 10], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-16,128,[-1, 1], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=128, shape=[32, 1], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_2_tensor = int8_tensor
 arg_2 = arg_2_tensor.clone()
+arg_3 = None
+arg_4 = -81
+arg_5 = "mean"
+arg_6 = True
+arg_7 = -1
+arg_8 = True
+arg_9 = None
 start = time.time()
-results["time_low"] = paddle.nn.functional.cross_entropy(arg_1,arg_2,)
+results["time_low"] = paddle.nn.functional.cross_entropy(arg_1,arg_2,weight=arg_3,ignore_index=arg_4,reduction=arg_5,soft_label=arg_6,axis=arg_7,use_softmax=arg_8,name=arg_9,)
 results["time_low"] = time.time() - start
 arg_1 = arg_1_tensor.clone().type(paddle.float32)
 arg_2 = arg_2_tensor.clone().type(paddle.int64)
 start = time.time()
-results["time_high"] = paddle.nn.functional.cross_entropy(arg_1,arg_2,)
+results["time_high"] = paddle.nn.functional.cross_entropy(arg_1,arg_2,weight=arg_3,ignore_index=arg_4,reduction=arg_5,soft_label=arg_6,axis=arg_7,use_softmax=arg_8,name=arg_9,)
 results["time_high"] = time.time() - start
 
 print(results)

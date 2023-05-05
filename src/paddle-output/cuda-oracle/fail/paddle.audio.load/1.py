@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = "C:\Users\phalt\.cache\paddle\dataset\ESC-50-master\audio\1-101296-A-19.wav"
+arg_1 = "C:\Users\phalt\.cache\paddle\dataset\ESC-50-master\audio\1-100210-A-36.wav"
 try:
   results["res_cpu"] = paddle.audio.load(arg_1,)
 except Exception as e:

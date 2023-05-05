@@ -1,10 +1,12 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-4,64,[1, 6, 1, 1], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 512, 62, 8], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = 3
-arg_3 = "NCHW"
+arg_2 = 1
+arg_3 = 35.0
 arg_4 = None
 start = time.time()
 results["time_low"] = paddle.nn.functional.channel_shuffle(arg_1,arg_2,arg_3,arg_4,)

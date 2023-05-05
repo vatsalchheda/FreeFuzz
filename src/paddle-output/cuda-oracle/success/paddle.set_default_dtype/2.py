@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = "float32"
+arg_1 = -1037.0
 try:
   results["res_cpu"] = paddle.set_default_dtype(arg_1,)
 except Exception as e:

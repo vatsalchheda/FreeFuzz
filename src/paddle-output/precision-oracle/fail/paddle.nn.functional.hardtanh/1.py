@@ -1,11 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-256,1,[3], dtype=paddle.float16)
+float_tensor = paddle.rand([3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = 34.0
-arg_3 = -40.0
-arg_4 = None
+arg_2 = -1.0
+arg_3 = 3
+arg_4 = "equal_nan"
 start = time.time()
 results["time_low"] = paddle.nn.functional.hardtanh(arg_1,arg_2,arg_3,arg_4,)
 results["time_low"] = time.time() - start

@@ -1,6 +1,5 @@
 import paddle
-arg_1_tensor = paddle.randint(-16384,32,[2], dtype=paddle.float32)
-arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-64,2048,[2, 3], dtype=paddle.int64)
-arg_2 = arg_2_tensor.clone()
-res = paddle.take(arg_1,arg_2,)
+arg_1_tensor = paddle.randint(-32768, 1, [3, 4], dtype=paddle.int64arg_1 = arg_1_tensor.clone()
+arg_2_tensor = paddle.randint(-1024, 8, [3, 5], dtype=paddle.int64arg_2 = arg_2_tensor.clone()
+arg_3 = "circular"
+res = paddle.take(arg_1,arg_2,mode=arg_3,)

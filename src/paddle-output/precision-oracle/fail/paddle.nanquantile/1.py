@@ -1,14 +1,19 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-32,16384,[2, 5], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 5], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = 0.5
-arg_3 = 1
+arg_2_0 = 19.3
+arg_2_1 = 2.5
+arg_2 = [arg_2_0,arg_2_1,]
+arg_3 = 0
 start = time.time()
 results["time_low"] = paddle.nanquantile(arg_1,q=arg_2,axis=arg_3,)
 results["time_low"] = time.time() - start
 arg_1 = arg_1_tensor.clone().type(paddle.float32)
+arg_2 = [arg_2_0,arg_2_1,]
 start = time.time()
 results["time_high"] = paddle.nanquantile(arg_1,q=arg_2,axis=arg_3,)
 results["time_high"] = time.time() - start

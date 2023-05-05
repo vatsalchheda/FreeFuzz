@@ -2,8 +2,8 @@ results = dict()
 import paddle
 import time
 arg_1 = 4
-arg_2 = 112
-arg_3 = 3
+arg_2 = 100
+arg_3 = 42
 start = time.time()
 results["time_low"] = paddle.set_printoptions(arg_1,arg_2,arg_3,)
 results["time_low"] = time.time() - start

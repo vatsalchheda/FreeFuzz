@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = True
+arg_1 = 13
 arg_2 = "MM"
 arg_3 = "github"
 start = time.time()

@@ -1,14 +1,20 @@
 results = dict()
 import paddle
 import time
-arg_1 = 0.5
-arg_2 = "mean"
+arg_1 = -24.5
+arg_2 = "sum"
 arg_class = paddle.nn.CosineEmbeddingLoss(margin=arg_1,reduction=arg_2,)
-arg_3_0_tensor = paddle.randint(-1024,256,[2, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_0_tensor = f16_tensor
 arg_3_0 = arg_3_0_tensor.clone()
-arg_3_1_tensor = paddle.randint(-2048,16,[2, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_1_tensor = f16_tensor
 arg_3_1 = arg_3_1_tensor.clone()
-arg_3_2_tensor = paddle.randint(-16,16,[2], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=127, shape=[2], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_3_2_tensor = int8_tensor
 arg_3_2 = arg_3_2_tensor.clone()
 arg_3 = [arg_3_0,arg_3_1,arg_3_2,]
 start = time.time()

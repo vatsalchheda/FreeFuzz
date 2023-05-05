@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1 = 0
+arg_1 = 5
 arg_class = paddle.nn.LocalResponseNorm(size=arg_1,)
-arg_2_0_tensor = paddle.randint(-8,32768,[3, 3, 112, 112], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 3, 112, 112], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()

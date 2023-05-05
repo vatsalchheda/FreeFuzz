@@ -1,11 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-16384,1,[5, 5, 8, 5, 6], dtype=paddle.complex64)
+real = paddle.rand([8, 6, 5, 8, 7], paddle.float32)
+imag = paddle.rand([8, 6, 5, 8, 7], paddle.float32)
+arg_1_tensor = paddle.complex(real, imag)
 arg_1 = arg_1_tensor.clone()
-arg_2 = 3
-arg_3 = 19.0
-arg_4 = "ortho"
+arg_2 = None
+arg_3 = -1
+arg_4 = "reflect"
 start = time.time()
 results["time_low"] = paddle.fft.ifft(arg_1,arg_2,arg_3,arg_4,)
 results["time_low"] = time.time() - start

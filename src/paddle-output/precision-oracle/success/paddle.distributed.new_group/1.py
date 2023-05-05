@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1_0 = -1
+arg_1_0 = 0
 arg_1 = [arg_1_0,]
 start = time.time()
 results["time_low"] = paddle.distributed.new_group(ranks=arg_1,)

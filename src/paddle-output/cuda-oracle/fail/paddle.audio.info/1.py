@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = "E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\test.wav"
+arg_1 = "C:\Users\phalt\Desktop\FreeFuzz\test.wav"
 try:
   results["res_cpu"] = paddle.audio.info(arg_1,)
 except Exception as e:

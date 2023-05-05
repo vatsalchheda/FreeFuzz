@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = False
+arg_1 = True
 try:
   results["res_cpu"] = paddle.set_grad_enabled(arg_1,)
 except Exception as e:

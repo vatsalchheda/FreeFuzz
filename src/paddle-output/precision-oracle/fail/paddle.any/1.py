@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(0,2,[6], dtype=paddle.bool)
+arg_1_tensor = paddle.randint(0,2,[1, 1])
 arg_1 = arg_1_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.any(arg_1,)

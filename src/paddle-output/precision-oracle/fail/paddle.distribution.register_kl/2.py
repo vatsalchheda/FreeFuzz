@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = 1.0
+arg_1 = "Beta"
 arg_2 = "Beta"
 start = time.time()
 results["time_low"] = paddle.distribution.register_kl(arg_1,arg_2,)

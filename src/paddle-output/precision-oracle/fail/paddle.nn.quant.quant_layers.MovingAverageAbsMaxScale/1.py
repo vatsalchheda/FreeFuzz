@@ -1,10 +1,12 @@
 results = dict()
 import paddle
 import time
-arg_1 = "fc_1.tmp_2"
-arg_2 = "int32"
+arg_1 = "fc_0.tmp_2"
+arg_2 = -119.0
 arg_class = paddle.nn.quant.quant_layers.MovingAverageAbsMaxScale(name=arg_1,dtype=arg_2,)
-arg_3_0_tensor = paddle.randint(-32768,32768,[-1, 10], dtype=paddle.float16)
+float_tensor = paddle.rand([-1, 10], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_0_tensor = f16_tensor
 arg_3_0 = arg_3_0_tensor.clone()
 arg_3 = [arg_3_0,]
 start = time.time()

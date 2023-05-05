@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1 = False
-arg_class = paddle.nn.GELU(arg_1,)
-arg_2_0_tensor = paddle.randint(-1,1024,[2, 2], dtype=paddle.float16)
+arg_1 = True
+arg_class = paddle.nn.GELU(approximate=arg_1,)
+float_tensor = paddle.rand([6, 0, 8], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()

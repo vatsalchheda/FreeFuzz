@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = True
+arg_1 = "lyuwenyu/paddlehub_demo:main"
 arg_2 = "MM"
 arg_3 = "github"
 try:

@@ -2,8 +2,8 @@ results = dict()
 import paddle
 import time
 arg_1 = 4
-arg_2 = True
-arg_3 = 0
+arg_2 = -1
+arg_3 = 65.0
 start = time.time()
 results["time_low"] = paddle.tril_indices(arg_1,arg_2,arg_3,)
 results["time_low"] = time.time() - start

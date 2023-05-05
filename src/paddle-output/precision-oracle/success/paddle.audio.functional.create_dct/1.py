@@ -1,8 +1,8 @@
 results = dict()
 import paddle
 import time
-arg_1 = 23
-arg_2 = 251
+arg_1 = 43
+arg_2 = 51
 start = time.time()
 results["time_low"] = paddle.audio.functional.create_dct(arg_1,arg_2,)
 results["time_low"] = time.time() - start

@@ -1,7 +1,8 @@
 import paddle
-arg_1_tensor = paddle.randint(-1,128,[3, 2], dtype=paddle.int64)
+float_tensor = paddle.rand([28, 8], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-1024,4,[2], dtype=paddle.int64)
+arg_2_tensor = paddle.randint(-64, 2, [10], dtype=paddle.int32)
 arg_2 = arg_2_tensor.clone()
-arg_3 = -5
-res = paddle.gather(arg_1,arg_2,axis=arg_3,)
+res = paddle.gather(arg_1,arg_2,)

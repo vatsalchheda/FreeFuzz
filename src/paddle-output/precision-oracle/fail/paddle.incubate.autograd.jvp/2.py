@@ -2,9 +2,13 @@ results = dict()
 import paddle
 import time
 arg_1 = "func"
-arg_2_tensor = paddle.randint(-32,4096,[2, 2], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 2], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
-arg_3_tensor = paddle.randint(-2,16,[2, 2], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 2], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_tensor = f16_tensor
 arg_3 = arg_3_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.incubate.autograd.jvp(arg_1,arg_2,arg_3,)

@@ -1,5 +1,5 @@
 import paddle
-arg_1_tensor = paddle.randint(-128,1,[0, 3], dtype=paddle.complex128)
+arg_1_tensor = paddle.rand([2, 4], dtype=paddle.float64)
 arg_1 = arg_1_tensor.clone()
-arg_2 = "int64"
-res = paddle.cast(arg_1,arg_2,)
+arg_2 = "paddleVarType"
+res = paddle.cast(arg_1,dtype=arg_2,)

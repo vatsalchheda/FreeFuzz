@@ -1,11 +1,15 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-16,1,[3, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-4,16384,[3, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
-arg_3 = 1
+arg_3 = -51
 start = time.time()
 results["time_low"] = paddle.cross(arg_1,arg_2,axis=arg_3,)
 results["time_low"] = time.time() - start

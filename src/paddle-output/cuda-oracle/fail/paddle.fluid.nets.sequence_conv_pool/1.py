@@ -1,9 +1,9 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-32768,128,[-1, 128], dtype=paddle.float32)
+arg_1_tensor = paddle.rand([-1, 128], dtype=paddle.float32)
 arg_1 = arg_1_tensor.clone()
-arg_2 = -1024
-arg_3 = 3
+arg_2 = 472
+arg_3 = 32
 arg_4 = "tanh"
 arg_5 = "sqrt"
 try:

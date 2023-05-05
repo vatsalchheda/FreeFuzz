@@ -2,7 +2,9 @@ results = dict()
 import paddle
 import time
 arg_class = paddle.nn.Identity()
-arg_1_0_tensor = paddle.randint(-2,32768,[0, 31], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 2], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_0_tensor = f16_tensor
 arg_1_0 = arg_1_0_tensor.clone()
 arg_1 = [arg_1_0,]
 start = time.time()

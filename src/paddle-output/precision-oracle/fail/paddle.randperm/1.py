@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = -6
+arg_1 = -104.0
 arg_2 = "int32"
 start = time.time()
 results["time_low"] = paddle.randperm(arg_1,arg_2,)

@@ -1,5 +1,7 @@
 import paddle
-arg_1_tensor = paddle.randint(-16,32768,[2, 3, 4], dtype=paddle.float32)
+float_tensor = paddle.rand([0, 61], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = 26
-res = paddle.sort(x=arg_1,axis=arg_2,)
+arg_2 = -1
+res = paddle.sort(arg_1,arg_2,)

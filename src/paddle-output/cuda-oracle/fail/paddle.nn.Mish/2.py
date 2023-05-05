@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 arg_class = paddle.nn.Mish()
-arg_1_0_tensor = paddle.randint(-16384,64,[3], dtype=paddle.float32)
+arg_1_0_tensor = paddle.rand([3], dtype=paddle.float32)
 arg_1_0 = arg_1_0_tensor.clone()
 arg_1 = [arg_1_0,]
 try:

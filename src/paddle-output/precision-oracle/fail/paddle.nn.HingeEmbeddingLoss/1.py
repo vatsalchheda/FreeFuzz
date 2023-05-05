@@ -1,12 +1,16 @@
 results = dict()
 import paddle
 import time
-arg_1 = 1.0
-arg_2 = "mean"
+arg_1 = 11.0
+arg_2 = "none"
 arg_class = paddle.nn.HingeEmbeddingLoss(margin=arg_1,reduction=arg_2,)
-arg_3_0_tensor = paddle.randint(-1,4096,[3, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_0_tensor = f16_tensor
 arg_3_0 = arg_3_0_tensor.clone()
-arg_3_1_tensor = paddle.randint(-1,2,[3, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_1_tensor = f16_tensor
 arg_3_1 = arg_3_1_tensor.clone()
 arg_3 = [arg_3_0,arg_3_1,]
 start = time.time()

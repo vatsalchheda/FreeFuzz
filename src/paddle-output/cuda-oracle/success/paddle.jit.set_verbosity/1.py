@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = 52
+arg_1 = 1
 try:
   results["res_cpu"] = paddle.jit.set_verbosity(arg_1,)
 except Exception as e:

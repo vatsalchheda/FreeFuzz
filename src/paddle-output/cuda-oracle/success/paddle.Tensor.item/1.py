@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-32,512,[1], dtype=paddle.int64)
+arg_1_tensor = paddle.rand([1], dtype=paddle.float32)
 arg_1 = arg_1_tensor.clone()
 try:
   results["res_cpu"] = paddle.Tensor.item(arg_1,)

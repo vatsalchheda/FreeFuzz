@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = "s4"
+arg_1 = -2.0
 try:
   results["res_cpu"] = paddle.static.name_scope(arg_1,)
 except Exception as e:

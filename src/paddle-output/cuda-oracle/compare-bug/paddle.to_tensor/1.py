@@ -1,15 +1,12 @@
 results = dict()
 import paddle
-arg_1_0 = -0.4
-arg_1_1 = -0.2
-arg_1_2 = 0.1
-arg_1_3 = 0.3
-arg_1 = [arg_1_0,arg_1_1,arg_1_2,arg_1_3,]
+arg_1_tensor = paddle.rand([4, 8, 4, 9], dtype=paddle.float64)
+arg_1 = arg_1_tensor.clone()
 try:
   results["res_cpu"] = paddle.to_tensor(arg_1,)
 except Exception as e:
   results["err_cpu"] = "ERROR:"+str(e)
-arg_1 = [arg_1_0,arg_1_1,arg_1_2,arg_1_3,]
+arg_1 = arg_1_tensor.clone().cuda()
 try:
   results["res_gpu"] = paddle.to_tensor(arg_1,)
 except Exception as e:

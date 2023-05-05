@@ -1,4 +1,5 @@
 import paddle
-arg_1_tensor = paddle.randint(-4096,64,[3, 4], dtype=paddle.int64)
+arg_1_tensor = paddle.rand([64, 16, 5, 5], dtype=paddle.float32)
 arg_1 = arg_1_tensor.clone()
-res = paddle.flatten(arg_1,)
+arg_2 = 1
+res = paddle.flatten(arg_1,arg_2,)

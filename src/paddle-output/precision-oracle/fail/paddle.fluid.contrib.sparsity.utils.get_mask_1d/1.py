@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-8,32,[4, 4], dtype=paddle.float16)
+float_tensor = paddle.rand([4, 4], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = 2
+arg_2 = -16
 arg_3 = 4
 start = time.time()
 results["time_low"] = paddle.fluid.contrib.sparsity.utils.get_mask_1d(arg_1,n=arg_2,m=arg_3,)

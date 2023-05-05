@@ -1,11 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-64,16,[4, 4, 4], dtype=paddle.complex64)
+real = paddle.rand([4, 4, 4], paddle.float32)
+imag = paddle.rand([4, 4, 4], paddle.float32)
+arg_1_tensor = paddle.complex(real, imag)
 arg_1 = arg_1_tensor.clone()
 arg_2 = None
-arg_3_0 = "max"
-arg_3_1 = "max"
+arg_3_0 = -2
+arg_3_1 = -1
 arg_3 = [arg_3_0,arg_3_1,]
 arg_4 = "forward"
 start = time.time()

@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = "fc_1.tmp_2.state"
+arg_1 = "fc_0.tmp_2.state"
 try:
   results["res_cpu"] = paddle.utils.unique_name.generate(arg_1,)
 except Exception as e:

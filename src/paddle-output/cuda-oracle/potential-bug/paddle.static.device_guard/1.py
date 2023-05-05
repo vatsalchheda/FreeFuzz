@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = "gpu:0"
+arg_1 = "gpu"
 try:
   results["res_cpu"] = paddle.static.device_guard(arg_1,)
 except Exception as e:

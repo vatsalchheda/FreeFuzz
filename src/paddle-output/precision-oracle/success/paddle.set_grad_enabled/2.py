@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = False
+arg_1 = True
 start = time.time()
 results["time_low"] = paddle.set_grad_enabled(arg_1,)
 results["time_low"] = time.time() - start

@@ -21,7 +21,9 @@ for t in types:
             if file.endswith('.py'):
                 file_dir = folder_dir + file
                 contents = open(file_dir, "r+")
-                code = '\t'.join(contents.readlines())
+                lines = contents.readlines()
+                # lines.insert(1, "paddle.utils.run_check()\n") if lines[0].__contains__('import paddle') else lines.insert(2, "paddle.utils.run_check()\n")
+                code = '\t'.join(lines)
                 new_file_name = "test_" + t + "_" + folder.replace(".","_") + "_" + file
                 test_line = f"def {new_file_name[:-3]}():\n"
                 test_file = open(test_dir+new_file_name, "w")

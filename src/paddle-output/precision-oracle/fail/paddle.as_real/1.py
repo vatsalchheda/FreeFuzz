@@ -1,7 +1,9 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-16384,128,[2, 3], dtype=paddle.complex64)
+real = paddle.rand([2, 3], paddle.float32)
+imag = paddle.rand([2, 3], paddle.float32)
+arg_1_tensor = paddle.complex(real, imag)
 arg_1 = arg_1_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.as_real(arg_1,)

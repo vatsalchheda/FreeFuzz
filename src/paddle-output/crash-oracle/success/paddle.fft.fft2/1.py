@@ -1,4 +1,9 @@
 import paddle
-arg_1_tensor = paddle.randint(-512,2,[2, 2], dtype=paddle.int32)
+arg_1_tensor = paddle.rand([2, 7, 7, 7, 7], dtype=paddle.float64)
 arg_1 = arg_1_tensor.clone()
-res = paddle.fft.fft2(arg_1,)
+arg_2 = None
+arg_3_0 = 0
+arg_3_1 = 1
+arg_3 = [arg_3_0,arg_3_1,]
+arg_4 = "backward"
+res = paddle.fft.fft2(arg_1,arg_2,arg_3,arg_4,)

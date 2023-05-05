@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = "C:\Users\phalt\.cache\paddle\dataset\ESC-50-master\audio\1-101296-A-19.wav"
+arg_1 = "C:\Users\phalt\.cache\paddle\dataset\TESS_Toronto_emotional_speech_set\OAF_angry\OAF_beg_angry.wav"
 start = time.time()
 results["time_low"] = paddle.audio.load(arg_1,)
 results["time_low"] = time.time() - start

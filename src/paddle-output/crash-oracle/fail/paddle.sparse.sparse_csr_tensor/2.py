@@ -1,0 +1,22 @@
+import paddle
+arg_1_0 = 60
+arg_1_1 = -19
+arg_1_2 = 20
+arg_1_3 = 36
+arg_1 = [arg_1_0,arg_1_1,arg_1_2,arg_1_3,]
+arg_2_0 = 1
+arg_2_1 = 3
+arg_2_2 = 2
+arg_2_3 = 0
+arg_2_4 = 1
+arg_2 = [arg_2_0,arg_2_1,arg_2_2,arg_2_3,arg_2_4,]
+arg_3_0 = False
+arg_3_1 = -99
+arg_3_2 = -79
+arg_3_3 = "max"
+arg_3_4 = True
+arg_3 = [arg_3_0,arg_3_1,arg_3_2,arg_3_3,arg_3_4,]
+arg_4_0 = 3
+arg_4_1 = 4
+arg_4 = [arg_4_0,arg_4_1,]
+res = paddle.sparse.sparse_csr_tensor(arg_1,arg_2,arg_3,arg_4,)

@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1 = 2
+arg_1 = True
 arg_class = paddle.nn.Maxout(groups=arg_1,)
-arg_2_0_tensor = paddle.randint(-1024,512,[1, 2, 3, 4], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 2, 3, 4], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()

@@ -1,9 +1,7 @@
 import paddle
-arg_1_tensor = paddle.randint(-64,4,[9, 2, 6, 6], dtype=paddle.float64)
+arg_1_tensor = paddle.randint(-128, 8192, [8, 7, 7, 3, 9, 0], dtype=paddle.int64)
 arg_1 = arg_1_tensor.clone()
 arg_2 = None
-arg_3_0 = 0
-arg_3_1 = -3
-arg_3 = [arg_3_0,arg_3_1,]
-arg_4 = "ortho"
+arg_3 = None
+arg_4 = "backward"
 res = paddle.fft.rfft2(arg_1,arg_2,arg_3,arg_4,)

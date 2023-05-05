@@ -1,7 +1,7 @@
 results = dict()
 import paddle
-arg_1 = "circular"
-arg_2_tensor = paddle.randint(-2,512,[1, 8000], dtype=paddle.float32)
+arg_1 = "E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\test.wav"
+arg_2_tensor = paddle.rand([1, 8000], dtype=paddle.float32)
 arg_2 = arg_2_tensor.clone()
 arg_3 = 16000
 try:
