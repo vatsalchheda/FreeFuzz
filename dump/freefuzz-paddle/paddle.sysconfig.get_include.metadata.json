@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"10bc16001eb74700965304445b72e123","collectionName":"paddle.sysconfig.get_include","type":"collection"}

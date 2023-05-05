@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"fbf422bc3f6a408397a1203f27c8e06f","collectionName":"paddle.static.ipu_shard_guard","type":"collection"}

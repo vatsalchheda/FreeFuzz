@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"55c80f7e575e439fa8bfd036db32722a","collectionName":"paddle.fluid.initializer.NormalInitializer","type":"collection"}

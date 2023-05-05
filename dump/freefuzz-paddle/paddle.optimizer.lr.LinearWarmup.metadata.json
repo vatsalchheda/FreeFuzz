@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"2d0322b1a6144c36ba60c2c714098a03","collectionName":"paddle.optimizer.lr.LinearWarmup","type":"collection"}

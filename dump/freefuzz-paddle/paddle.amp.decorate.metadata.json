@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"98bf21ffa44d4587b326c07cebb71e5d","collectionName":"paddle.amp.decorate","type":"collection"}

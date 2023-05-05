@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"40679bf784d044b68565d8a4c21a18a2","collectionName":"paddle.fluid.install_check.run_check","type":"collection"}

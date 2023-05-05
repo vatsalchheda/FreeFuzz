@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"a535793b39bd4271851428b2ace94c39","collectionName":"paddle.fluid.contrib.sparsity.utils.get_mask_1d","type":"collection"}

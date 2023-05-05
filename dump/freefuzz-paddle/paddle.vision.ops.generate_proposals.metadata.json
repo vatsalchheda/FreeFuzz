@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"34d47e5bd3234aa09b197735dde8c8d0","collectionName":"paddle.vision.ops.generate_proposals","type":"collection"}

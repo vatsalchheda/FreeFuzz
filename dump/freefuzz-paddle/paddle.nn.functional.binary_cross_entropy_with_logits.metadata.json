@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ea748ecea9784077b83df695332f3751","collectionName":"paddle.nn.functional.binary_cross_entropy_with_logits","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"9c67acda2a5143ceb235f24b709d8af2","collectionName":"paddle.nn.functional.binary_cross_entropy_with_logits","type":"collection"}

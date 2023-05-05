@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"599f09a9fe3b47d1ab4c90789b969182","collectionName":"paddle.vision.ops.box_coder","type":"collection"}

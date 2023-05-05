@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0f20e199bb624fce8c45b604195b23ce","collectionName":"paddle.static.cpu_places","type":"collection"}

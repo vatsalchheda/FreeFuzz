@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"70f13bf39a1a4358b150cbabfd770215","collectionName":"paddle.text.ViterbiDecoder","type":"collection"}

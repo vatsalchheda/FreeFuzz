@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"3fb0fc3d74f7452bb62d5765044c17ca","collectionName":"paddle.nn.TransformerEncoderLayer","type":"collection"}

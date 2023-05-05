@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"5f7cbd35b4b74724ad2600dd46f6f2d6","collectionName":"paddle.fluid.layers.control_flow.DynamicRNN","type":"collection"}

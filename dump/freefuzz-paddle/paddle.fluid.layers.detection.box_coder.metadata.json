@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"340311ebf6084e708a2a85bdbee5749f","collectionName":"paddle.fluid.layers.detection.box_coder","type":"collection"}

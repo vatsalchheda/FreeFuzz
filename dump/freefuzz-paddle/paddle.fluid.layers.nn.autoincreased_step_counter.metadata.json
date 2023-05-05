@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0f9de629c8484dbe87b8f3f866836937","collectionName":"paddle.fluid.layers.nn.autoincreased_step_counter","type":"collection"}

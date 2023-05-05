@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8c67798cfec74282b95a8a4c7c8d0766","collectionName":"paddle.fluid.layers.nn.elementwise_floordiv","type":"collection"}

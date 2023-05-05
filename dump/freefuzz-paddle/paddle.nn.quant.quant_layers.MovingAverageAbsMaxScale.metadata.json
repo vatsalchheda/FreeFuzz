@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"62579c6fbabb44f5a80e195b376eeef4","collectionName":"paddle.nn.quant.quant_layers.MovingAverageAbsMaxScale","type":"collection"}

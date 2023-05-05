@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"a59bead532ea4d8681b0c668f446de10","collectionName":"paddle.fluid.layers.tensor.fill_constant_batch_size_like","type":"collection"}

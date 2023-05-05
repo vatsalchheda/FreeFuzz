@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f75914d2cd674743984a8c2bf7e333a2","collectionName":"paddle.fluid.dygraph.learning_rate_scheduler.StepDecay","type":"collection"}

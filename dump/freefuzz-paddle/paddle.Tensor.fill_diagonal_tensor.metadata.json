@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"41b19586341d411c940dcb9b41b00de8","collectionName":"paddle.Tensor.fill_diagonal_tensor","type":"collection"}
