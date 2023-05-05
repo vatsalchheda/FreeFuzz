@@ -1,7 +1,5 @@
 import paddle
-arg_1 = "func"
-arg_2_tensor = paddle.randint(-32,32768,[2, 2], dtype=paddle.float32)
+arg_1 = 8
+arg_2_tensor = paddle.rand([0], dtype=paddle.float32)
 arg_2 = arg_2_tensor.clone()
-arg_3_tensor = paddle.randint(-32,128,[2, 19], dtype=paddle.float32)
-arg_3 = arg_3_tensor.clone()
-res = paddle.incubate.autograd.jvp(arg_1,arg_2,arg_3,)
+res = paddle.incubate.autograd.jvp(arg_1,arg_2,)

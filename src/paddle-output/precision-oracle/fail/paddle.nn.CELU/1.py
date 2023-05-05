@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1 = -48
+arg_1 = "max"
 arg_class = paddle.nn.CELU(arg_1,)
-arg_2_0_tensor = paddle.randint(-2,1024,[2, 2], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 2], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()

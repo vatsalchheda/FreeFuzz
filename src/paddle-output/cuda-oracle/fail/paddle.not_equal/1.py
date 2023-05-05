@@ -1,9 +1,7 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-64,512,[7, 8], dtype=paddle.float64)
-arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-4,32768,[7, 8], dtype=paddle.float64)
-arg_2 = arg_2_tensor.clone()
+arg_1_tensor = paddle.randint(-32768, 128, [3], dtype=paddle.int64arg_1 = arg_1_tensor.clone()
+arg_2_tensor = paddle.randint(-1024, 8, [3], dtype=paddle.int64arg_2 = arg_2_tensor.clone()
 try:
   results["res_cpu"] = paddle.not_equal(arg_1,arg_2,)
 except Exception as e:

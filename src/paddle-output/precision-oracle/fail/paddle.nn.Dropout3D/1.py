@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1 = -1024
+arg_1 = 46.5
 arg_class = paddle.nn.Dropout3D(p=arg_1,)
-arg_2_0_tensor = paddle.randint(-512,2,[1, 2, 2, 2, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 2, 2, 2, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()

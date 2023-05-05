@@ -1,11 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1 = 2
+arg_1 = 141.0
 arg_2 = 2
-arg_3 = 0
+arg_3 = 73.0
 arg_class = paddle.nn.MaxPool3D(kernel_size=arg_1,stride=arg_2,padding=arg_3,)
-arg_4_0_tensor = paddle.randint(-4096,256,[1, 2, 3, 32, 32], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 2, 3, 32, 32], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_4_0_tensor = f16_tensor
 arg_4_0 = arg_4_0_tensor.clone()
 arg_4 = [arg_4_0,]
 start = time.time()

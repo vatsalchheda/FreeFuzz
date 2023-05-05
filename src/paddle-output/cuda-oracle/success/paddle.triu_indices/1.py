@@ -1,8 +1,8 @@
 results = dict()
 import paddle
-arg_1 = -23
+arg_1 = 4
 arg_2 = 4
-arg_3 = -72
+arg_3 = "max"
 try:
   results["res_cpu"] = paddle.triu_indices(arg_1,arg_2,arg_3,)
 except Exception as e:

@@ -1,13 +1,15 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-16,2,[1, 3, 32, 32], dtype=paddle.float16)
+float_tensor = paddle.rand([64, 6, 28, 28], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = -14
+arg_2 = 2
 arg_3 = 2
 arg_4 = 0
-arg_5 = True
-arg_6 = False
+arg_5 = False
+arg_6 = True
 arg_7 = "NCHW"
 arg_8 = None
 start = time.time()

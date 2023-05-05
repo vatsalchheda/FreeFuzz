@@ -1,7 +1,9 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-64,16384,[1], dtype=paddle.float16)
+float_tensor = paddle.rand([5000, 128], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.sign(x=arg_1,)

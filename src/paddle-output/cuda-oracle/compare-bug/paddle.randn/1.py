@@ -1,17 +1,12 @@
 results = dict()
 import paddle
-arg_1_0_tensor = paddle.randint(-16384,32,[1], dtype=paddle.int64)
-arg_1_0 = arg_1_0_tensor.clone()
-arg_1_1_tensor = paddle.randint(-16,2,[1], dtype=paddle.int32)
-arg_1_1 = arg_1_1_tensor.clone()
-arg_1 = [arg_1_0,arg_1_1,]
+arg_1_0 = 3
+arg_1 = [arg_1_0,]
 try:
   results["res_cpu"] = paddle.randn(shape=arg_1,)
 except Exception as e:
   results["err_cpu"] = "ERROR:"+str(e)
-arg_1_0 = arg_1_0_tensor.clone().cuda()
-arg_1_1 = arg_1_1_tensor.clone().cuda()
-arg_1 = [arg_1_0,arg_1_1,]
+arg_1 = [arg_1_0,]
 try:
   results["res_gpu"] = paddle.randn(shape=arg_1,)
 except Exception as e:

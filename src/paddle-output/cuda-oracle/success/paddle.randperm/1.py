@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = -6
+arg_1 = -104.0
 arg_2 = "int32"
 try:
   results["res_cpu"] = paddle.randperm(arg_1,arg_2,)

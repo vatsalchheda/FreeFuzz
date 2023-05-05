@@ -1,17 +1,21 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-4096,1024,[512, 4], dtype=paddle.float16)
+float_tensor = paddle.rand([512, 4], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
 arg_2_0 = 0.1
 arg_2_1 = 0.1
 arg_2_2 = 0.2
 arg_2_3 = 0.2
 arg_2 = [arg_2_0,arg_2_1,arg_2_2,arg_2_3,]
-arg_3_tensor = paddle.randint(-32,256,[512, 81, 4], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 21, 4], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_tensor = f16_tensor
 arg_3 = arg_3_tensor.clone()
 arg_4 = "decode_center_size"
-arg_5 = False
+arg_5 = True
 arg_6 = 1
 arg_7 = None
 start = time.time()

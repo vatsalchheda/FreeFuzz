@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-4,16384,[6], dtype=paddle.int64)
+arg_1_tensor = paddle.randint(-1024, 64, [6], dtype=paddle.int64)
 arg_1 = arg_1_tensor.clone()
 try:
   results["res_cpu"] = paddle.unique(arg_1,)

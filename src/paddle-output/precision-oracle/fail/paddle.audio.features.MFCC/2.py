@@ -1,10 +1,12 @@
 results = dict()
 import paddle
 import time
-arg_1 = False
+arg_1 = 44100
 arg_2 = 40
 arg_class = paddle.audio.features.MFCC(sr=arg_1,n_mfcc=arg_2,)
-arg_3_0_tensor = paddle.randint(-128,16,[1, 35043], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 220500], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_0_tensor = f16_tensor
 arg_3_0 = arg_3_0_tensor.clone()
 arg_3 = [arg_3_0,]
 start = time.time()

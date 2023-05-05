@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = -1
+arg_1 = 60
 try:
   results["res_cpu"] = paddle.seed(arg_1,)
 except Exception as e:

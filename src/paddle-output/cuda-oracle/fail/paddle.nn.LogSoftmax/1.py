@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 arg_class = paddle.nn.LogSoftmax()
-arg_1_0_tensor = paddle.randint(-16384,2,[2, 3, 4], dtype=paddle.float32)
+arg_1_0_tensor = paddle.rand([2, 3, 4], dtype=paddle.float32)
 arg_1_0 = arg_1_0_tensor.clone()
 arg_1 = [arg_1_0,]
 try:

@@ -1,14 +1,18 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-8,64,[2], dtype=paddle.float16)
+float_tensor = paddle.rand([2], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-2048,32768,[2], dtype=paddle.float16)
+float_tensor = paddle.rand([2], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
-arg_3 = 18.00001
-arg_4 = 56.00000001
-arg_5 = "mean"
-arg_6 = "ignore_nan"
+arg_3 = -13.99999
+arg_4 = 51.0
+arg_5 = True
+arg_6 = "equal_nan"
 start = time.time()
 results["time_low"] = paddle.isclose(arg_1,arg_2,rtol=arg_3,atol=arg_4,equal_nan=arg_5,name=arg_6,)
 results["time_low"] = time.time() - start

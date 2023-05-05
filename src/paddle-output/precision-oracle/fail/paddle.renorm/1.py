@@ -1,11 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-2,256,[2, 2, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([0, 2, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = 1.0
-arg_3 = 2
-arg_4 = "sum"
+arg_2 = 14.0
+arg_3 = True
+arg_4 = 2.05
 start = time.time()
 results["time_low"] = paddle.renorm(arg_1,arg_2,arg_3,arg_4,)
 results["time_low"] = time.time() - start

@@ -1,13 +1,19 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-8192,8192,[-1, 100, 256], dtype=paddle.float16)
+float_tensor = paddle.rand([-1, 100, 256], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-256,1,[1, 100, 150], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 100, 150], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
-arg_3_tensor = paddle.randint(-32768,4,[1, 100, 150], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 100, 150], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_3_tensor = f16_tensor
 arg_3 = arg_3_tensor.clone()
-arg_4 = 12
+arg_4 = 16
 arg_5 = 150
 arg_6 = 1
 arg_7 = 0.2

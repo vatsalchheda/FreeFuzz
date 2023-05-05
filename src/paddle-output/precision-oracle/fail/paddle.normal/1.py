@@ -1,14 +1,17 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-1,32,[3], dtype=paddle.float16)
-arg_1 = arg_1_tensor.clone()
+arg_1 = 0.0
+arg_2 = "reflect"
+arg_3_0 = 8
+arg_3_1 = 8
+arg_3 = [arg_3_0,arg_3_1,]
 start = time.time()
-results["time_low"] = paddle.normal(mean=arg_1,)
+results["time_low"] = paddle.normal(mean=arg_1,std=arg_2,shape=arg_3,)
 results["time_low"] = time.time() - start
-arg_1 = arg_1_tensor.clone().type(paddle.float32)
+arg_3 = [arg_3_0,arg_3_1,]
 start = time.time()
-results["time_high"] = paddle.normal(mean=arg_1,)
+results["time_high"] = paddle.normal(mean=arg_1,std=arg_2,shape=arg_3,)
 results["time_high"] = time.time() - start
 
 print(results)

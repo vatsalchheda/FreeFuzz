@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1 = 63
+arg_1 = 3
 arg_class = paddle.nn.ChannelShuffle(arg_1,)
-arg_2_0_tensor = paddle.randint(-8192,1024,[1, 6, 1, 1], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 6, 1, 1], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()

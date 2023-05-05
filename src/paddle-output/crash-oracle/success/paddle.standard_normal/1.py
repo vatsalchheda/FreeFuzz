@@ -1,4 +1,5 @@
 import paddle
-arg_1_tensor = paddle.randint(-4,16,[2], dtype=paddle.int64)
-arg_1 = arg_1_tensor.clone()
-res = paddle.standard_normal(arg_1,)
+arg_1_0 = 2
+arg_1_1 = 3
+arg_1 = [arg_1_0,arg_1_1,]
+res = paddle.standard_normal(shape=arg_1,)

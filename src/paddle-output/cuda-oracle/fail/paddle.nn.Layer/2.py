@@ -1,19 +1,16 @@
 results = dict()
 import paddle
 arg_class = paddle.nn.Layer()
-arg_1_0_tensor = paddle.randint(-4096,4096,[1, 1, 2, 2, 3], dtype=paddle.int32)
+arg_1_0_tensor = paddle.rand([64, 16, 10, 10], dtype=paddle.float32)
 arg_1_0 = arg_1_0_tensor.clone()
-arg_1_1_tensor = paddle.randint(-4,8192,[1, 1, 2, 0, 3], dtype=paddle.int32)
-arg_1_1 = arg_1_1_tensor.clone()
-arg_1 = [arg_1_0,arg_1_1,]
+arg_1 = [arg_1_0,]
 try:
   results["res_cpu"] = arg_class(*arg_1)
 except Exception as e:
   results["err_cpu"] = "ERROR:"+str(e)
 arg_class = arg_class.cuda()
 arg_1_0 = arg_1_0_tensor.clone().cuda()
-arg_1_1 = arg_1_1_tensor.clone().cuda()
-arg_1 = [arg_1_0,arg_1_1,]
+arg_1 = [arg_1_0,]
 try:
   results["res_gpu"] = arg_class(*arg_1)
 except Exception as e:

@@ -1,7 +1,7 @@
 results = dict()
 import paddle
-arg_1 = 80
-arg_2 = 0.5
+arg_1 = 64
+arg_2 = -12.5
 arg_3 = 10000
 arg_4 = True
 arg_5 = "float64"

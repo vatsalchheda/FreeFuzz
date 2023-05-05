@@ -1,17 +1,27 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-4096,1,[1, 6, 1, 1], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-32768,8192,[3], dtype=paddle.float16)
+float_tensor = paddle.rand([3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
-arg_3_tensor = paddle.randint(-64,1,[3], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=127, shape=[3], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_3_tensor = int8_tensor
 arg_3 = arg_3_tensor.clone()
-arg_4_tensor = paddle.randint(-8,32,[4], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=127, shape=[3], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_4_tensor = int8_tensor
 arg_4 = arg_4_tensor.clone()
-arg_5 = True
+arg_5 = -83.0
 arg_6 = "sum"
-arg_7_tensor = paddle.randint(-4,2,[1], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=127, shape=[1], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_7_tensor = int8_tensor
 arg_7 = arg_7_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.geometric.send_ue_recv(arg_1,arg_2,arg_3,arg_4,message_op=arg_5,reduce_op=arg_6,out_size=arg_7,)

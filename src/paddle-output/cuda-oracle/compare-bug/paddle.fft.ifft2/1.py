@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-16,128,[2, 2], dtype=paddle.int32)
+arg_1_tensor = paddle.randint(-16384, 128, [2, 2], dtype=paddle.int32)
 arg_1 = arg_1_tensor.clone()
 try:
   results["res_cpu"] = paddle.fft.ifft2(arg_1,)

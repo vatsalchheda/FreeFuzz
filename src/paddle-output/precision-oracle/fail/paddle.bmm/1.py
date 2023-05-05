@@ -1,14 +1,18 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-256,4096,[2, 2, 3], dtype=paddle.complex64)
+float_tensor = paddle.rand([16, 164, 164], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-512,8,[2, 3, 2], dtype=paddle.float16)
+float_tensor = paddle.rand([16, 164, 64], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
 start = time.time()
 results["time_low"] = paddle.bmm(arg_1,arg_2,)
 results["time_low"] = time.time() - start
-arg_1 = arg_1_tensor.clone().type(paddle.complex128)
+arg_1 = arg_1_tensor.clone().type(paddle.float32)
 arg_2 = arg_2_tensor.clone().type(paddle.float32)
 start = time.time()
 results["time_high"] = paddle.bmm(arg_1,arg_2,)

@@ -1,9 +1,9 @@
 results = dict()
 import paddle
 import time
-arg_1 = 16
+arg_1 = -3.141592653589793
 arg_2 = 10
-arg_3 = 5
+arg_3 = 4
 arg_4 = 2
 arg_5 = "float32"
 start = time.time()

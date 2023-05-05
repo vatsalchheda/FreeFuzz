@@ -1,9 +1,11 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-32,4,[1], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=127, shape=[6], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_1_tensor = int8_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = -29
+arg_2 = 0
 start = time.time()
 results["time_low"] = paddle.equal(arg_1,arg_2,)
 results["time_low"] = time.time() - start

@@ -1,14 +1,16 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-32,16,[3, 4], dtype=paddle.int8)
+float_tensor = paddle.rand([1, 30001], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = "circular"
+arg_2 = 1
 arg_3 = "float64"
 start = time.time()
 results["time_low"] = paddle.cumprod(arg_1,dim=arg_2,dtype=arg_3,)
 results["time_low"] = time.time() - start
-arg_1 = arg_1_tensor.clone().type(paddle.int64)
+arg_1 = arg_1_tensor.clone().type(paddle.float32)
 start = time.time()
 results["time_high"] = paddle.cumprod(arg_1,dim=arg_2,dtype=arg_3,)
 results["time_high"] = time.time() - start

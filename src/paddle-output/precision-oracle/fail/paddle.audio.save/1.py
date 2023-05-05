@@ -1,8 +1,10 @@
 results = dict()
 import paddle
 import time
-arg_1 = "circular"
-arg_2_tensor = paddle.randint(-4,128,[1, 8000], dtype=paddle.float16)
+arg_1 = "E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\test.wav"
+float_tensor = paddle.rand([1, 8000], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
 arg_3 = 16000
 start = time.time()

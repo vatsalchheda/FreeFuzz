@@ -1,7 +1,6 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-8,2,[4, 45], dtype=paddle.float32)
-arg_1 = arg_1_tensor.clone()
+arg_1_tensor = paddle.randint(-2048, 512, [4], dtype=paddle.int32arg_1 = arg_1_tensor.clone()
 try:
   results["res_cpu"] = paddle.is_floating_point(arg_1,)
 except Exception as e:

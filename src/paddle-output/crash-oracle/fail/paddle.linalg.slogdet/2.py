@@ -1,4 +1,6 @@
 import paddle
-arg_1_tensor = paddle.randint(-4096,2,[3, 3, 3], dtype=paddle.float32)
+int_tensor = paddle.randint(low=-128, high=128, shape=[44, 40000], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_1_tensor = int8_tensor
 arg_1 = arg_1_tensor.clone()
 res = paddle.linalg.slogdet(arg_1,)

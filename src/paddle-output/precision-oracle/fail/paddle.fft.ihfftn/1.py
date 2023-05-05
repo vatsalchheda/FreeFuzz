@@ -1,11 +1,13 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-16384,8,[5, 5], dtype=paddle.float16)
+float_tensor = paddle.rand([5, 5], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_tensor = f16_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2 = "circular"
-arg_3_0 = -2
-arg_3_1 = -1
+arg_2 = None
+arg_3_0 = False
+arg_3_1 = 18.0
 arg_3 = [arg_3_0,arg_3_1,]
 arg_4 = "backward"
 arg_5 = None

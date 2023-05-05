@@ -1,19 +1,19 @@
 results = dict()
 import paddle
-arg_1_tensor = paddle.randint(-32,16,[-1, 4, 5, 5], dtype=paddle.float32)
+arg_1_tensor = paddle.rand([-1, 4, 5, 5], dtype=paddle.float32)
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-64,128,[-1, 16, 5, 5], dtype=paddle.float32)
+arg_2_tensor = paddle.rand([-1, 16, 5, 5], dtype=paddle.float32)
 arg_2 = arg_2_tensor.clone()
-arg_3_tensor = paddle.randint(-64,512,[-1, 0], dtype=paddle.float32)
+arg_3_tensor = paddle.rand([-1, 3], dtype=paddle.float32)
 arg_3 = arg_3_tensor.clone()
-arg_4_tensor = paddle.randint(-1,2,[-1, 0, 4, 4], dtype=paddle.float32)
+arg_4_tensor = paddle.rand([-1, 5, 4, 4], dtype=paddle.float32)
 arg_4 = arg_4_tensor.clone()
-arg_5_tensor = paddle.randint(-512,256,[-1, 5, 10, 4], dtype=paddle.float32)
+arg_5_tensor = paddle.rand([-1, 5, 10, 4], dtype=paddle.float32)
 arg_5 = arg_5_tensor.clone()
 arg_6 = 6000
-arg_7 = 1000
+arg_7 = "max"
 arg_8 = 0.5
-arg_9 = -27.9
+arg_9 = 17.1
 arg_10 = 1.0
 arg_11 = False
 arg_12 = None

@@ -55,12 +55,22 @@ class PaddleArgument(Argument):
             suffix = ""
             if is_cuda:
                 suffix = ".cuda()"
-            if str(dtype).startswith("float"):
+            if dtype in [paddle.float32, paddle.float64]: # float
                 code = f"{var_name}_tensor = paddle.rand({self.shape}, dtype={dtype})\n"
-            elif str(dtype).startswith("complex"):
-                code = f"{var_name}_tensor = paddle.rand({self.shape}, dtype={dtype})\n"
-            elif dtype == paddle.bool:
-                code = f"{var_name}_tensor = paddle.randint(0,2,{self.shape}, dtype={dtype})\n"
+            elif dtype in [paddle.int32, paddle.int64]: # int
+                code = f"{var_name}_tensor = paddle.randint({min_value}, {max_value}, {self.shape}, dtype={dtype})\n"
+            elif dtype == paddle.bool: # bool
+                code = f"{var_name}_tensor = paddle.randint(0,2,{self.shape})\n"
+            elif dtype in [paddle.complex64, paddle.complex128]:
+                code = generate_complex_tensor(self.shape, var_name, dtype)
+            elif dtype == paddle.int8:
+                code = generate_int8_tensor(self.shape, var_name)
+            elif dtype == paddle.int16:
+                code = generate_int16_tensor(self.shape, var_name)
+            elif dtype == paddle.uint8:
+                code = generate_uint8_tensor(self.shape, var_name)
+            elif dtype == paddle.float16:
+                code = generate_f16_tensor(self.shape, var_name)
             else:
                 code = f"{var_name}_tensor = paddle.randint({min_value},{max_value},{self.shape}, dtype={dtype})\n"
             code += f"{var_name} = {var_name}_tensor.clone(){suffix}\n"
@@ -403,3 +413,30 @@ class PaddleAPI(API):
             if key != "output_signature":
                 args[key] = PaddleArgument.generate_arg_from_signature(record[key])
         return args
+    
+def generate_complex_tensor(shape, var_name, dtype):
+    if dtype == paddle.complex64:
+        x = paddle.float32
+    else:
+        x = paddle.float64
+    code = f"real = paddle.rand({shape}, {x})\nimag = paddle.rand({shape}, {x})\n{var_name}_tensor = paddle.complex(real, imag)\n"
+    return code
+
+
+def generate_int8_tensor(shape, var_name):
+    code = f"int_tensor = paddle.randint(low=-128, high=128, shape={shape}, dtype='int32')\nint8_tensor = int_tensor.astype('int8')\n{var_name}_tensor = int8_tensor\n"
+    return code
+
+def generate_uint8_tensor(shape, var_name):
+    code = f"int_tensor = paddle.randint(low=0, high=256, shape={shape}, dtype='int32')\nuint8_tensor = int_tensor.astype('uint8')\n{var_name}_tensor = uint8_tensor\n"
+    return code
+
+
+def generate_int16_tensor(shape, var_name):
+    code = f"int_tensor = paddle.randint(low=-32768, high=32768, shape={shape}, dtype='int32')\nint16_tensor = int_tensor.astype('int16')\n{var_name}_tensor = int16_tensor\n"
+    return code
+
+
+def generate_f16_tensor(shape, var_name):
+    code = f"float_tensor = paddle.rand({shape}, 'float32')\nf16_tensor = float_tensor.astype('float16')\n{var_name}_tensor = f16_tensor\n"
+    return code

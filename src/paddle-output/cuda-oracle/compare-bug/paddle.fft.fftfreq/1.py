@@ -1,7 +1,7 @@
 results = dict()
 import paddle
-arg_1 = 5
-arg_2 = -43.7
+arg_1 = 1
+arg_2 = 0.3
 try:
   results["res_cpu"] = paddle.fft.fftfreq(arg_1,d=arg_2,)
 except Exception as e:

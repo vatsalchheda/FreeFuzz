@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = True
+arg_1 = False
 arg_2 = "O0"
 try:
   results["res_cpu"] = paddle.amp.auto_cast(enable=arg_1,level=arg_2,)

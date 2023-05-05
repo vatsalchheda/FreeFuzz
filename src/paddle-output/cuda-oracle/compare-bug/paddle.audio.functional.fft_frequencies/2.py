@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 arg_1 = 16000
-arg_2 = 128
+arg_2 = 168
 try:
   results["res_cpu"] = paddle.audio.functional.fft_frequencies(arg_1,arg_2,)
 except Exception as e:

@@ -2,7 +2,9 @@ results = dict()
 import paddle
 import time
 arg_class = paddle.nn.LogSoftmax()
-arg_1_0_tensor = paddle.randint(-64,4096,[2, 3, 4], dtype=paddle.float16)
+float_tensor = paddle.rand([2, 3, 4], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_1_0_tensor = f16_tensor
 arg_1_0 = arg_1_0_tensor.clone()
 arg_1 = [arg_1_0,]
 start = time.time()

@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = "s4"
+arg_1 = -2.0
 start = time.time()
 results["time_low"] = paddle.static.name_scope(arg_1,)
 results["time_low"] = time.time() - start

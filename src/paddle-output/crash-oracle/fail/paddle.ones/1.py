@@ -1,5 +1,7 @@
 import paddle
-arg_1_tensor = paddle.randint(-16,64,[2], dtype=paddle.int32)
-arg_1 = arg_1_tensor.clone()
-arg_2 = "int32"
-res = paddle.ones(shape=arg_1,dtype=arg_2,)
+arg_1_0 = -19
+arg_1_1 = 1024
+arg_1_2 = -24
+arg_1 = [arg_1_0,arg_1_1,arg_1_2,]
+arg_2 = "paddleVarType"
+res = paddle.ones(arg_1,dtype=arg_2,)

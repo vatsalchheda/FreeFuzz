@@ -1,14 +1,18 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-128,2,[3, 2], dtype=paddle.int8)
+int_tensor = paddle.randint(low=-128, high=128, shape=[3, 2], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_1_tensor = int8_tensor
 arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-128,16384,[3, 9, 10], dtype=paddle.float16)
+float_tensor = paddle.rand([3, 9, 10], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_tensor = f16_tensor
 arg_2 = arg_2_tensor.clone()
-arg_3_0 = 60
-arg_3_1 = -28
-arg_3_2 = 67
-arg_3_3 = 70
+arg_3_0 = 3
+arg_3_1 = 5
+arg_3_2 = 9
+arg_3_3 = 10
 arg_3 = [arg_3_0,arg_3_1,arg_3_2,arg_3_3,]
 start = time.time()
 results["time_low"] = paddle.scatter_nd(arg_1,arg_2,arg_3,)

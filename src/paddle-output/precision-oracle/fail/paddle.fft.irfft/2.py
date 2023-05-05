@@ -1,7 +1,9 @@
 results = dict()
 import paddle
 import time
-arg_1_tensor = paddle.randint(-2048,128,[4, 4, 4], dtype=paddle.complex64)
+real = paddle.rand([4, 4, 4], paddle.float32)
+imag = paddle.rand([4, 4, 4], paddle.float32)
+arg_1_tensor = paddle.complex(real, imag)
 arg_1 = arg_1_tensor.clone()
 arg_2 = None
 arg_3 = -1

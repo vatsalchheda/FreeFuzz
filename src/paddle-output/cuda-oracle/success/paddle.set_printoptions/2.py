@@ -1,8 +1,8 @@
 results = dict()
 import paddle
-arg_1 = -60
+arg_1 = 4
 arg_2 = 100
-arg_3 = 3
+arg_3 = 42
 try:
   results["res_cpu"] = paddle.set_printoptions(arg_1,arg_2,arg_3,)
 except Exception as e:

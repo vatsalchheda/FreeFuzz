@@ -1,8 +1,8 @@
 results = dict()
 import paddle
-arg_1 = "replicate"
+arg_1 = "max"
 arg_class = paddle.nn.Dropout3D(p=arg_1,)
-arg_2_0_tensor = paddle.randint(-1024,32,[1, 2, 2, 2, 3], dtype=paddle.float32)
+arg_2_0_tensor = paddle.rand([1, 4, 2, 1, 3], dtype=paddle.float64)
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 try:

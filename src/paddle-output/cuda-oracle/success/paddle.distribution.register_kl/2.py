@@ -1,6 +1,6 @@
 results = dict()
 import paddle
-arg_1 = 1.0
+arg_1 = "Beta"
 arg_2 = "Beta"
 try:
   results["res_cpu"] = paddle.distribution.register_kl(arg_1,arg_2,)

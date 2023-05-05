@@ -2,7 +2,7 @@ results = dict()
 import paddle
 import time
 arg_1 = "reader"
-arg_2 = 98
+arg_2 = 16
 start = time.time()
 results["time_low"] = paddle.batch(arg_1,batch_size=arg_2,)
 results["time_low"] = time.time() - start

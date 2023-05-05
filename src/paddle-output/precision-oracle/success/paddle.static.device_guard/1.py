@@ -1,7 +1,7 @@
 results = dict()
 import paddle
 import time
-arg_1 = "gpu:0"
+arg_1 = "gpu"
 start = time.time()
 results["time_low"] = paddle.static.device_guard(arg_1,)
 results["time_low"] = time.time() - start

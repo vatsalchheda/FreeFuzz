@@ -1,10 +1,10 @@
 results = dict()
 import paddle
-arg_1 = "numpyndarray"
+arg_1 = 64.0
 arg_class = paddle.nn.initializer.Constant(arg_1,)
-arg_2_0_tensor = paddle.randint(-16,8,[16896], dtype=paddle.float64)
+arg_2_0_tensor = paddle.rand([256], dtype=paddle.float32)
 arg_2_0 = arg_2_0_tensor.clone()
-arg_2_1_tensor = paddle.randint(0,1,[2, 2], dtype=paddle.float32)
+arg_2_1_tensor = paddle.rand([2, 2], dtype=paddle.float32)
 arg_2_1 = arg_2_1_tensor.clone()
 arg_2 = [arg_2_0,arg_2_1,]
 try:

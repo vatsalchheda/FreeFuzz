@@ -1,3 +1,3 @@
 import paddle
-arg_1 = "E:\UIUC\Spring 2023\CS 527\FreeFuzz\Scrape\test.wav"
+arg_1 = "C:\Users\phalt\Desktop\FreeFuzz\test.wav"
 res = paddle.audio.info(arg_1,)

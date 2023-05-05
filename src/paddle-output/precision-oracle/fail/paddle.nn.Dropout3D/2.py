@@ -1,15 +1,17 @@
 results = dict()
 import paddle
 import time
-arg_1 = "replicate"
+arg_1 = "max"
 arg_class = paddle.nn.Dropout3D(p=arg_1,)
-arg_2_0_tensor = paddle.randint(-2048,2048,[1, 2, 2, 2, 3], dtype=paddle.float16)
+float_tensor = paddle.rand([1, 4, 2, 1, 3], 'float32')
+f16_tensor = float_tensor.astype('float16')
+arg_2_0_tensor = f16_tensor
 arg_2_0 = arg_2_0_tensor.clone()
 arg_2 = [arg_2_0,]
 start = time.time()
 results["time_low"] = arg_class(*arg_2)
 results["time_low"] = time.time() - start
-arg_2_0 = arg_2_0_tensor.clone().type(paddle.float32)
+arg_2_0 = arg_2_0_tensor.clone().type(paddle.float64)
 arg_2 = [arg_2_0,]
 start = time.time()
 results["time_high"] = arg_class(*arg_2)

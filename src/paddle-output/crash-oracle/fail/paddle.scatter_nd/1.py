@@ -1,7 +1,6 @@
 import paddle
-arg_1_tensor = paddle.randint(-64,16384,[2, 3], dtype=paddle.int64)
-arg_1 = arg_1_tensor.clone()
-arg_2_tensor = paddle.randint(-4096,256,[3, 9, 10], dtype=paddle.float32)
+arg_1_tensor = paddle.randint(-8, 8, [3, 2], dtype=paddle.int64arg_1 = arg_1_tensor.clone()
+arg_2_tensor = paddle.rand([3, 9, 10], dtype=paddle.float32)
 arg_2 = arg_2_tensor.clone()
 arg_3_0 = 3
 arg_3_1 = 5

@@ -1,8 +1,8 @@
 results = dict()
 import paddle
 arg_1 = 4
-arg_2 = True
-arg_3 = 0
+arg_2 = -1
+arg_3 = 65.0
 try:
   results["res_cpu"] = paddle.tril_indices(arg_1,arg_2,arg_3,)
 except Exception as e:

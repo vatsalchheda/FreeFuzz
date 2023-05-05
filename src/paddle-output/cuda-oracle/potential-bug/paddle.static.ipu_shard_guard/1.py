@@ -1,7 +1,7 @@
 results = dict()
 import paddle
-arg_1 = -43
-arg_2 = -16
+arg_1 = 18
+arg_2 = -105.0
 try:
   results["res_cpu"] = paddle.static.ipu_shard_guard(index=arg_1,stage=arg_2,)
 except Exception as e:
