@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"dcc55dc9915d4752a87f121fa66a6af8","collectionName":"torch.nn.AdaptiveMaxPool3d","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"e3dcb33e0d4742f1a1ccc16f8eb1df1b","collectionName":"torch.nn.AdaptiveMaxPool3d","type":"collection"}

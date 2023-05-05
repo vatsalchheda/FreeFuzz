@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ac1edd3300a44270b224d1e07e023d02","collectionName":"paddle.fluid.dygraph.learning_rate_scheduler.ReduceLROnPlateau","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0738633ecdf8407f980d3a3514ff1c24","collectionName":"paddle.fluid.dygraph.learning_rate_scheduler.ReduceLROnPlateau","type":"collection"}

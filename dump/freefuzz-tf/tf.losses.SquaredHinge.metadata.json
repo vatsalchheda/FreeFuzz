@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"a1e904e044df46c0bfd0f757dea39373","collectionName":"tf.losses.SquaredHinge","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"294a750ce75e4a79a1347264e227db2e","collectionName":"tf.losses.SquaredHinge","type":"collection"}

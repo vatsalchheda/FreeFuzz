@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"011528f44b6340a4960d6508409d0786","collectionName":"paddle.fluid.layers.GRUCell","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"fed2dd7429f244eab858f04cbedfbcba","collectionName":"paddle.fluid.layers.GRUCell","type":"collection"}

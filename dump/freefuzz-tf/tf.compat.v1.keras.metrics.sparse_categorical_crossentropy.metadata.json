@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"c532dc7f8ea04e7b8ed43cf95912111c","collectionName":"tf.compat.v1.keras.metrics.sparse_categorical_crossentropy","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"468c1cb7719540dd88ebb247092400e7","collectionName":"tf.compat.v1.keras.metrics.sparse_categorical_crossentropy","type":"collection"}

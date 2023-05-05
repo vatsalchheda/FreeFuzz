@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"6a8f2bbd708548029cebef708d5c7a9b","collectionName":"torch.nn.TripletMarginLoss","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"701a8e700b434da597f65d870101ca30","collectionName":"torch.nn.TripletMarginLoss","type":"collection"}

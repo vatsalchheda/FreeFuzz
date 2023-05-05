@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"3145613a684f412f8b75f519aa614c8e","collectionName":"torch.Tensor.quantile","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"710b0c42c94e46daa7e701ccdc8c3002","collectionName":"torch.Tensor.quantile","type":"collection"}

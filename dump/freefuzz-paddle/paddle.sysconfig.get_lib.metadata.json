@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f7664f8a6c314a549455b7773c62e6f1","collectionName":"paddle.sysconfig.get_lib","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"43e6788f08b7471a9879c6565480b276","collectionName":"paddle.sysconfig.get_lib","type":"collection"}

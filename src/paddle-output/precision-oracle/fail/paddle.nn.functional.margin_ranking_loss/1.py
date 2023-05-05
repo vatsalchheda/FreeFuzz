@@ -1,0 +1,23 @@
+results = dict()
+import paddle
+import time
+arg_1_tensor = paddle.rand([2, 2], dtype=paddle.float32)
+arg_1 = arg_1_tensor.clone()
+arg_2_tensor = paddle.rand([2, 2], dtype=paddle.float32)
+arg_2 = arg_2_tensor.clone()
+arg_3_tensor = paddle.rand([3, 3], dtype=paddle.float32)
+arg_3 = arg_3_tensor.clone()
+arg_4 = -73.0
+arg_5 = "mean"
+arg_6 = None
+start = time.time()
+results["time_low"] = paddle.nn.functional.margin_ranking_loss(arg_1,arg_2,arg_3,arg_4,arg_5,arg_6,)
+results["time_low"] = time.time() - start
+arg_1 = arg_1_tensor.clone().astype(paddle.float32)
+arg_2 = arg_2_tensor.clone().astype(paddle.float32)
+arg_3 = arg_3_tensor.clone().astype(paddle.float32)
+start = time.time()
+results["time_high"] = paddle.nn.functional.margin_ranking_loss(arg_1,arg_2,arg_3,arg_4,arg_5,arg_6,)
+results["time_high"] = time.time() - start
+
+print(results)

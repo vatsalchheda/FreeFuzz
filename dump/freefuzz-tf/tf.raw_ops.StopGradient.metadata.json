@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"d5f5830c562f43dbb14c585ffce3d068","collectionName":"tf.raw_ops.StopGradient","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"13f850173384428fbd2543bd93185d8b","collectionName":"tf.raw_ops.StopGradient","type":"collection"}

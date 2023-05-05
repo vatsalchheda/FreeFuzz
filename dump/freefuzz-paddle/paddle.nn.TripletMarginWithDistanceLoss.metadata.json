@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"b4e7473c33214a78998a5adb7f211cd5","collectionName":"paddle.nn.TripletMarginWithDistanceLoss","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ffe8bea629c94b278dc1807a3de5dc34","collectionName":"paddle.nn.TripletMarginWithDistanceLoss","type":"collection"}

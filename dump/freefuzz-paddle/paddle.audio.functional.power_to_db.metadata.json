@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"60b18a36c7424b2c8f8dbb17afe1ac92","collectionName":"paddle.audio.functional.power_to_db","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"fb6f6b309ca6426d8d6792d2e7842132","collectionName":"paddle.audio.functional.power_to_db","type":"collection"}

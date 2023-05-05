@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8c2bdd7ff786467abf5b4ec41141ea39","collectionName":"paddle.linalg.triangular_solve","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"647e45f8f5e246e7b6e7872a4669d432","collectionName":"paddle.linalg.triangular_solve","type":"collection"}

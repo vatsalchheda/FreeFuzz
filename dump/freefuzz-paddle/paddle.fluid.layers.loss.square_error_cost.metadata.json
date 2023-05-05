@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"6c47a50f5e4b485699064f77400f2eee","collectionName":"paddle.fluid.layers.loss.square_error_cost","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0f3db44b4b374f358c41157103389a9c","collectionName":"paddle.fluid.layers.loss.square_error_cost","type":"collection"}

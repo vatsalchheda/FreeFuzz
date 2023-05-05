@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"bcea91039e104de0bad6722796269f37","collectionName":"tf.keras.layers.Rescaling","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ffca13780f2142cfa1ded7bc3ac98e2f","collectionName":"tf.keras.layers.Rescaling","type":"collection"}

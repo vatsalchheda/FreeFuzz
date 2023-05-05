@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"dfca09bb18e949c9a2e97528533cba81","collectionName":"torch.nn.CrossEntropyLoss","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"b21a7bc1300d4ab2b89a0df3a0895c30","collectionName":"torch.nn.CrossEntropyLoss","type":"collection"}

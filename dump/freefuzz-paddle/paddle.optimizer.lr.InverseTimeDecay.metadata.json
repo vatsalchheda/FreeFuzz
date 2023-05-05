@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"3e9df7a6f39a43128b0810121fd10fb7","collectionName":"paddle.optimizer.lr.InverseTimeDecay","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"08265935f0e44ee7a0952c98f4dcb3b9","collectionName":"paddle.optimizer.lr.InverseTimeDecay","type":"collection"}

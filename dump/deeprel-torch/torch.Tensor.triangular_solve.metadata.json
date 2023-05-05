@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f6bb86935aa74fef91ffe374da21251a","collectionName":"torch.Tensor.triangular_solve","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"5240a8af145b4e6ebfc5a7ca7adaa17f","collectionName":"torch.Tensor.triangular_solve","type":"collection"}

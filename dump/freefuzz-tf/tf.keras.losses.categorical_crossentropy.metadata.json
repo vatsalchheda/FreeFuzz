@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0fbd9cdfe1a544389c0db7b04f5c97e6","collectionName":"tf.keras.losses.categorical_crossentropy","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"e6623b278a1c48e3a9febf3eda7047be","collectionName":"tf.keras.losses.categorical_crossentropy","type":"collection"}

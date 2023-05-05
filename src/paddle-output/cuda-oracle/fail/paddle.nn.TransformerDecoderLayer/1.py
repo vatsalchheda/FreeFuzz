@@ -1,0 +1,32 @@
+results = dict()
+import paddle
+arg_1 = 128
+arg_2 = 2
+arg_3 = 8
+arg_4 = 0.1
+arg_5 = "mean"
+arg_6 = 0.0
+arg_7 = 0.0
+arg_8 = True
+arg_9 = None
+arg_10 = paddle.int16
+arg_class = paddle.nn.TransformerDecoderLayer(d_model=arg_1,nhead=arg_2,dim_feedforward=arg_3,dropout=arg_4,activation=arg_5,attn_dropout=arg_6,act_dropout=arg_7,normalize_before=arg_8,weight_attr=arg_9,bias_attr=arg_10,)
+arg_11_0_tensor = paddle.rand([4, 1, 8], dtype=paddle.float32)
+arg_11_0 = arg_11_0_tensor.clone()
+arg_11_1_tensor = paddle.rand([4, 11, 8], dtype=paddle.float32)
+arg_11_1 = arg_11_1_tensor.clone()
+arg_11 = [arg_11_0,arg_11_1,]
+try:
+  results["res_cpu"] = arg_class(*arg_11)
+except Exception as e:
+results["err_cpu"] = "ERROR:"+str(e)
+arg_class = arg_class.cuda()
+arg_11_0 = arg_11_0_tensor.clone().cuda()
+arg_11_1 = arg_11_1_tensor.clone().cuda()
+arg_11 = [arg_11_0,arg_11_1,]
+try:
+  results["res_gpu"] = arg_class(*arg_11)
+except Exception as e:
+results["err_gpu"] = "ERROR:"+str(e)
+
+print(results)

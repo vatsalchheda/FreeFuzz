@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f152ad18865647e2a31992ee8c97d458","collectionName":"paddle.nn.AdaptiveMaxPool3D","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"f9143113943e4bdfbcd5b94a3ba04a22","collectionName":"paddle.nn.AdaptiveMaxPool3D","type":"collection"}

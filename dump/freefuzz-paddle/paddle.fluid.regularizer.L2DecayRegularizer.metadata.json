@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8adb97d686b94a9289eab2b5fc341648","collectionName":"paddle.fluid.regularizer.L2DecayRegularizer","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0657bd0f1ee9428f9159b9228a012f3e","collectionName":"paddle.fluid.regularizer.L2DecayRegularizer","type":"collection"}

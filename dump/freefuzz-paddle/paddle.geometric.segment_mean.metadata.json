@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0792152aaf264c54b542c97847c9d07d","collectionName":"paddle.geometric.segment_mean","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"976670df06834f078f9932788cbf40d5","collectionName":"paddle.geometric.segment_mean","type":"collection"}

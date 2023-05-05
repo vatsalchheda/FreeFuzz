@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"045e57d0d2d94daea121b1c3731bf0df","collectionName":"torch.Tensor.fmin","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"13b8719ac65646ef95de7d18e4df0a82","collectionName":"torch.Tensor.fmin","type":"collection"}

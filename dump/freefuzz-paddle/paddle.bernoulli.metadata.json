@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"96ab58d2559a4b29855a79ab0a869c21","collectionName":"paddle.bernoulli","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"d90c783dd0d5455997d9475a0c954cc4","collectionName":"paddle.bernoulli","type":"collection"}

@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"26d333412ade4495a42e19971594508e","collectionName":"paddle.fluid.io.save_vars","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"421d1eea6bad4aa3b1b64f833452c537","collectionName":"paddle.fluid.io.save_vars","type":"collection"}

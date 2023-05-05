@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"065d39fe07f748fe8a615d81f56c7604","collectionName":"paddle.optimizer.lr.LRScheduler","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"1d637a1144064c97a2dfab0e6d15b823","collectionName":"paddle.optimizer.lr.LRScheduler","type":"collection"}

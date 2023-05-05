@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"533a2af9885c44e59cd1a6507b518ee1","collectionName":"paddle.fluid.io.save_persistables","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"61f70904a23e4c8588730744cb2ffd39","collectionName":"paddle.fluid.io.save_persistables","type":"collection"}

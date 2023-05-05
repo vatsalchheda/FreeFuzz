@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"631610048d2d45e6a7be425e8cc90ae6","collectionName":"paddle.fluid.dygraph.nn.LayerNorm","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"143c415052ad402c93620db0caff0bca","collectionName":"paddle.fluid.dygraph.nn.LayerNorm","type":"collection"}

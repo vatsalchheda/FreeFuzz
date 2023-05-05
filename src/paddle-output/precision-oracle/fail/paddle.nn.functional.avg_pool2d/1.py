@@ -1,0 +1,22 @@
+results = dict()
+import paddle
+import time
+arg_1_tensor = paddle.rand([1, 3, 32, 32], dtype=paddle.float32)
+arg_1 = arg_1_tensor.clone()
+arg_2 = "max"
+arg_3 = None
+arg_4 = 0
+arg_5 = False
+arg_6 = True
+arg_7 = None
+arg_8 = True
+arg_9 = None
+start = time.time()
+results["time_low"] = paddle.nn.functional.avg_pool2d(arg_1,kernel_size=arg_2,stride=arg_3,padding=arg_4,ceil_mode=arg_5,exclusive=arg_6,divisor_override=arg_7,data_format=arg_8,name=arg_9,)
+results["time_low"] = time.time() - start
+arg_1 = arg_1_tensor.clone().astype(paddle.float32)
+start = time.time()
+results["time_high"] = paddle.nn.functional.avg_pool2d(arg_1,kernel_size=arg_2,stride=arg_3,padding=arg_4,ceil_mode=arg_5,exclusive=arg_6,divisor_override=arg_7,data_format=arg_8,name=arg_9,)
+results["time_high"] = time.time() - start
+
+print(results)

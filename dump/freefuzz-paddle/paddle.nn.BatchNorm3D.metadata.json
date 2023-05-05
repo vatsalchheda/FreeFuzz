@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"5fabbfd6b94842c9b72dc86d665b53f1","collectionName":"paddle.nn.BatchNorm3D","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"dbcd15be9bf048f1a7c87370349d6848","collectionName":"paddle.nn.BatchNorm3D","type":"collection"}

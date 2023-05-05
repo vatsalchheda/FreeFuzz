@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8a18d5bfabc74411af0d296018f08509","collectionName":"paddle.fluid.layers.tensor.argmax","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"6dc6ed6fd77d479f9499decf4ffe5698","collectionName":"paddle.fluid.layers.tensor.argmax","type":"collection"}

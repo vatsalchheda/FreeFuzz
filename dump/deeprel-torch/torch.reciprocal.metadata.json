@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"59cf0e5427b64c0493d73461968bb625","collectionName":"torch.reciprocal","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"05589df2092e4e0d896056694bbd1eb1","collectionName":"torch.reciprocal","type":"collection"}

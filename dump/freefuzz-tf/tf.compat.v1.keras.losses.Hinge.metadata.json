@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"aaf5c31b5c104c14a765bdfb51d27f39","collectionName":"tf.compat.v1.keras.losses.Hinge","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"c99533c4a9fd4503b48cbeb50b284cf8","collectionName":"tf.compat.v1.keras.losses.hinge","type":"collection"}

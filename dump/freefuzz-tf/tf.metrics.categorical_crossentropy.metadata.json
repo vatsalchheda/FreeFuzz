@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"87730bf215104f4a8ce29c6d1b51487f","collectionName":"tf.metrics.categorical_crossentropy","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"73597d8dea5c4405b57fae6d092fe406","collectionName":"tf.metrics.categorical_crossentropy","type":"collection"}

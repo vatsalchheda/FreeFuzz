@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"4bf353a6166b47b08a9c1a2309c631fa","collectionName":"tf.compat.v1.keras.losses.cosine_proximity","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"7c1eba34c40d4c35890cb9736adadc90","collectionName":"tf.compat.v1.keras.losses.cosine_proximity","type":"collection"}

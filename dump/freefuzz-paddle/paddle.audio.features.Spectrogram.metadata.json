@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"12fe961b9aeb4253a85bc15050b29ba8","collectionName":"paddle.audio.features.Spectrogram","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"d41a94e26bbb458796569c9f3b9d9421","collectionName":"paddle.audio.features.Spectrogram","type":"collection"}

@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"fc774523766e4dc69863eede2592784a","collectionName":"tf.compat.v1.tensor_scatter_update","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"5efcd3ad1a3c494191f79061beb1b1f3","collectionName":"tf.compat.v1.tensor_scatter_update","type":"collection"}

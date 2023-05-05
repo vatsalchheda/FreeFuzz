@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"3536dc33a16a4e8b8377a677ae59df9b","collectionName":"paddle.shard_index","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"1998195a8c524e7eb24d0ea6e9f88d35","collectionName":"paddle.shard_index","type":"collection"}

@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"8f4ac403e42343b2bcfa6c437996f5c0","collectionName":"torch.Tensor.arctan","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"76ca442518fa4a4689bb35a54ffa0f01","collectionName":"torch.Tensor.arctan","type":"collection"}

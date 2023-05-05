@@ -1,0 +1,44 @@
+results = dict()
+import paddle
+import time
+arg_1 = "cond"
+arg_2 = "body"
+int_tensor = paddle.randint(low=0, high=255, shape=[], dtype='int32')
+uint8_tensor = int_tensor.astype('uint8')
+arg_3_0_tensor = uint8_tensor
+arg_3_0 = arg_3_0_tensor.clone()
+real = paddle.rand([0], paddle.float32)
+imag = paddle.rand([0], paddle.float32)
+arg_3_1_tensor = paddle.complex(real, imag)
+arg_3_1 = arg_3_1_tensor.clone()
+arg_3_2_tensor = paddle.rand([1], dtype=paddle.float32)
+arg_3_2 = arg_3_2_tensor.clone()
+arg_3_3_tensor = paddle.rand([13], dtype=paddle.float32)
+arg_3_3 = arg_3_3_tensor.clone()
+int_tensor = paddle.randint(low=-128, high=127, shape=[1], dtype='int32')
+int8_tensor = int_tensor.astype('int8')
+arg_3_4_tensor = int8_tensor
+arg_3_4 = arg_3_4_tensor.clone()
+real = paddle.rand([], paddle.float32)
+imag = paddle.rand([], paddle.float32)
+arg_3_5_tensor = paddle.complex(real, imag)
+arg_3_5 = arg_3_5_tensor.clone()
+arg_3_6_tensor = paddle.randint(0,2,[16])
+arg_3_6 = arg_3_6_tensor.clone()
+arg_3 = [arg_3_0,arg_3_1,arg_3_2,arg_3_3,arg_3_4,arg_3_5,arg_3_6,]
+start = time.time()
+results["time_low"] = paddle.static.nn.while_loop(cond=arg_1,body=arg_2,loop_vars=arg_3,)
+results["time_low"] = time.time() - start
+arg_3_0 = arg_3_0_tensor.clone().astype(paddle.uint8)
+arg_3_1 = arg_3_1_tensor.clone().astype(paddle.complex64)
+arg_3_2 = arg_3_2_tensor.clone().astype(paddle.float32)
+arg_3_3 = arg_3_3_tensor.clone().astype(paddle.float32)
+arg_3_4 = arg_3_4_tensor.clone().astype(paddle.int16)
+arg_3_5 = arg_3_5_tensor.clone().astype(paddle.complex128)
+arg_3_6 = arg_3_6_tensor.clone().astype(paddle.bool)
+arg_3 = [arg_3_0,arg_3_1,arg_3_2,arg_3_3,arg_3_4,arg_3_5,arg_3_6,]
+start = time.time()
+results["time_high"] = paddle.static.nn.while_loop(cond=arg_1,body=arg_2,loop_vars=arg_3,)
+results["time_high"] = time.time() - start
+
+print(results)
