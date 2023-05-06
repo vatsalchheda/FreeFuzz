@@ -962,7 +962,6 @@ paddle.fluid.transpiler.collective.GradAllReduce(nrings=2)
 paddle.fluid.transpiler.collective.LocalSGD(nrings=2)
 paddle.fluid.transpiler.collective.MultiThread(nrings=1,trans_mode='all_reduce')
 paddle.fluid.transpiler.distribute_transpiler.DistributeTranspiler(config=None)
-paddle.fluid.transpiler.distribute_transpiler.DistributeTranspilerConfig
 paddle.fluid.transpiler.memory_optimization_transpiler.memory_optimize(input_program,skip_opt_set=None,print_log=False,level=0,skip_grads=True)
 paddle.fluid.transpiler.memory_optimization_transpiler.release_memory(input_program,skip_opt_set=None)
 paddle.fluid.transpiler.ps_dispatcher.HashName(pserver_endpoints)

@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # for lod mode
 import paddle.fluid as fluid
 x = fluid.data(name='x', shape=[None, 8], dtype='float32', lod_level=1)

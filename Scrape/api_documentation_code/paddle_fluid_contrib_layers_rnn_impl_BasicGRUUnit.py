@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid.layers as layers
 from paddle.fluid.contrib.layers import BasicGRUUnit
 

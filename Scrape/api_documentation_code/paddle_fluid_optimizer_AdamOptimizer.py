@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 # Adam with beta1/beta2 as Variable
 import paddle
 import paddle.fluid as fluid

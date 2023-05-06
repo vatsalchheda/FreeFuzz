@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 #declarative mode
 import paddle.fluid as fluid
 import numpy as np

@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 boxes = fluid.data(name='bboxes', shape=[None,81, 4],
                           dtype='float32', lod_level=1)

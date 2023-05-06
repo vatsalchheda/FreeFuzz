@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 
 input0 = fluid.layers.fill_constant(shape=[2, 3], dtype='int64', value=5)

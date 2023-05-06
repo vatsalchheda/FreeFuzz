@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 bbox_pred = fluid.data(name='bbox_pred', shape=[None, 4], dtype='float32')
 cls_logits = fluid.data(name='cls_logits', shape=[None, 1], dtype='float32')

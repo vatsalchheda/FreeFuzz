@@ -1,3 +1,4 @@
+
 import paddle
 
 from .decorate_func import decorate_function
@@ -18,7 +19,7 @@ def hijack(obj, func_name_str):
         return inspect.isclass(x)
     def is_callable(x):
         return callable(x)
-    
+
     if is_class(orig_func):
         wrapped_func = decorate_class(orig_func, func_name_str)
     elif is_callable(orig_func):
@@ -30,9 +31,8 @@ def hijack(obj, func_name_str):
 
 with open(__file__.replace("__init__.py", "paddle.txt"), "r") as f1:
     lines = f1.readlines()
-    # skipped = ["enable_grad", "get_default_dtype", "load", "tensor", "no_grad", "jit"]
-    skipped = "fluid"
+    skipped = ["fluid.incubate.fleet.parameter_server.pslib.optimizer_factory.DistributedAdam", "Tensor"]
     for l in lines:
         l = l.strip()
-        if skipped not in l:
+        if l not in skipped:
             hijack(paddle, l)

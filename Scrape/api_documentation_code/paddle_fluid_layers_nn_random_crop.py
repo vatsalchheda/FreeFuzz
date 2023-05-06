@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 img = fluid.data("img", [None, 3, 256, 256])
 # cropped_img is [-1, 3, 224, 224]

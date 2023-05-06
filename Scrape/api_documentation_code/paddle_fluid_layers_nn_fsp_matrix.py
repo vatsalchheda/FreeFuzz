@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 data = fluid.data(name='data', shape=[None, 3, 32, 32])
 feature_map_0 = fluid.layers.conv2d(data, num_filters=2,

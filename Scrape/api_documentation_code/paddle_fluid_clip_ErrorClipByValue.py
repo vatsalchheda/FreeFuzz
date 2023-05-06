@@ -1,3 +1,5 @@
+import paddle
+paddle.enable_static()
 import paddle.fluid as fluid
 BATCH_SIZE = 128
 CLIP_MAX = 2e-6
@@ -17,3 +19,4 @@ prog_clip = prog.clone()
 prog_clip.block(0).var(hidden1.name)._set_error_clip(
     fluid.clip.ErrorClipByValue(
         max=CLIP_MAX, min=CLIP_MIN)
+)
